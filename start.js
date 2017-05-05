@@ -21,7 +21,11 @@ if (!nodeModulesExists) {
 
 
 
-
+// Use Nunjucks
+// =============================================================================
+// Configure app to use nunjucks templating style to render views.
+//
+// Firstly the requires
 var express = require('express');
 var nunjucks = require('nunjucks');
 
@@ -33,8 +37,11 @@ nunjucks.configure('views', {
     express: app
 });
 
-app.set('port', process.env.PORT || 3000);
 
+// Routes
+// =============================================================================
+// Decide the content served from the URL
+//
 // Home page
 app.get('/', function(req, res) {
     res.render('index.html', {
@@ -42,8 +49,18 @@ app.get('/', function(req, res) {
         port: app.get('port')
     });
 });
+// TODO : this needs putting in a routes.js
 
+
+// Start server
+// =============================================================================
+// set ports and GO
+//
+// Set ports
+app.set('port', process.env.PORT || 3000);
 // Kick start our server
 app.listen(app.get('port'), function() {
     console.log('Server started on port', app.get('port'));
 });
+
+// TODO : this needs putting in a server.js
