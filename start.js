@@ -19,14 +19,6 @@ app.get('/', function(req, res) {
     });
 });
 
-// Other example
-app.get('/example', function(req, res) {
-    res.render('example.html', {
-        page: 'example',
-        port: app.get('port')
-    });
-});
-
 // Kick start our server
 app.listen(app.get('port'), function() {
     console.log('Server started on port', app.get('port'));
