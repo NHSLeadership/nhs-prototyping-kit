@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/NHSLeadership/nhs-prototyping-kit#readme",
   "dependencies": {
+    "chokidar": "^1.6.1",
     "cross-spawn": "^5.0.0",
     "express": "4.13.3",
     "gulp": "^3.9.1",
@@ -38,6 +39,6 @@
     "nunjucks": "^2.5.2",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.2",
-    "chokidar": "^1.6.1"
+    "sass-mq": "^3.3.2",
   }
 }
