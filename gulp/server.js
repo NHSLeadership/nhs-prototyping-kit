@@ -11,13 +11,9 @@ gulp.task('server', function () {
   nodemon({
     script: 'server.js',
     ext: 'js, json',
-
-    // Do we need these ignores?
-
-    /*ignore: [config.paths.public + '*',
-    *  config.paths.assets + '*',
-    *  config.paths.nodeModules + '*']
-    */
+    ignore: [config.paths.public + '*',
+      config.paths.appAssets + '*',
+      config.paths.nodeModules + '*']
 
   }).on('quit', function () {
 
