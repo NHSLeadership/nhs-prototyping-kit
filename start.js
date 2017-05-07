@@ -34,13 +34,26 @@ if (!nodeModulesExists) {
 var express = require('express');
 var nunjucks = require('nunjucks');
 
+// Set up App
 var app = express();
+var appViews = [path.join(__dirname, '/app/views/')]
 
 // Setup nunjucks templating engine
 nunjucks.configure('views', {
     autoescape: true,
     express: app
 });
+
+var nunjucksAppEnv = nunjucks.configure(appViews, {
+  autoescape: true,
+  express: app,
+  noCache: true,
+  watch: true
+})
+
+// Set views engine
+app.set('view engine', 'html')
+
 
 
 /** Start server
