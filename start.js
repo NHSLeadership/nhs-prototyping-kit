@@ -56,9 +56,9 @@ app.set('view engine', 'html')
 
 // Routes
 // ---------------------------------------------------------------------------
-// Import routes
 //
 
+// Import routes
 app.use(require('./app/routes'))
 
 
@@ -70,3 +70,26 @@ app.use(require('./app/routes'))
 app.listen(port);
 // Tell us it's started
 console.log('Server started on port', port);
+
+
+// Gulp
+// ---------------------------------------------------------------------------
+//
+
+// Requires to sport node async scripts
+var spawn = require('cross-spawn')
+// Colour set for errors
+process.env['FORCE_COLOR'] = 1
+
+// Gulp
+var gulp = spawn('gulp')
+
+// Catch errors
+gulp.stdout.pipe(process.stdout)
+gulp.stderr.pipe(process.stderr)
+process.stdin.pipe(gulp.stdin)
+
+// Report errors
+gulp.on('exit', function (code) {
+  console.log('gulp exited with code ' + code.toString())
+})
