@@ -6,6 +6,9 @@
 // requires
 var gulp = require('gulp')
 var nodemon = require('gulp-nodemon')
+// Some config vars to save re-typing
+var config = require('./config.json')
+
 
 gulp.task('server', function () {
   nodemon({
