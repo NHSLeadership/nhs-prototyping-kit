@@ -1,0 +1,9 @@
+{
+  "paths": {
+    "appAssets" : "app/assets/",
+    "public" : "public/",
+    "nightingale": "lib/nightingale/",
+    "nodeModules": "node_modules/",
+    "lib": "lib/"
+  }
+}

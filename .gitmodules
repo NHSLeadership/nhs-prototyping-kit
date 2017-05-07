@@ -1,0 +1,3 @@
+[submodule "lib/nightingale"]
+	path = lib/nightingale
+	url = https://github.com/NHSLeadership/nightingale

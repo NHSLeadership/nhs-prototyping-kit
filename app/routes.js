@@ -9,6 +9,7 @@ var router = express.Router()
 
 // Set routes
 // ---------------------------------------------------------------------------
+
 // Home page
 router.get('/', function(req, res) {
     res.render('index')
@@ -21,6 +22,9 @@ router.get('/', function(req, res) {
 //     res.render('page-name')
 // });
 
+
+// Static assets
+router.use(express.static('./public'))
 
 // Export routes
 // ---------------------------------------------------------------------------

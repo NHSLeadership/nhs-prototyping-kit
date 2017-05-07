@@ -6,18 +6,17 @@
 // requires
 var gulp = require('gulp')
 var nodemon = require('gulp-nodemon')
+// Some config vars to save re-typing
+var config = require('./config.json')
+
 
 gulp.task('server', function () {
   nodemon({
     script: 'server.js',
     ext: 'js, json',
-
-    // Do we need these ignores?
-
-    /*ignore: [config.paths.public + '*',
-    *  config.paths.assets + '*',
-    *  config.paths.nodeModules + '*']
-    */
+    ignore: [config.paths.public + '*',
+      config.paths.appAssets + '*',
+      config.paths.nodeModules + '*']
 
   }).on('quit', function () {
 

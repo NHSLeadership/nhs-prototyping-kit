@@ -35,3 +35,11 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# Rendered stylesheets in ./app
+app/assets/stylesheets/*.css
+app/assets/stylesheets/*.scss
+!app/assets/stylesheets/trumps.scss
+
+# All ./public
+public
