@@ -1,0 +1,8 @@
+{
+  "paths": {
+    "assets" : "app/assets/",
+    "nightingale": "lib/nightingale/",
+    "nodeModules": "node_modules/",
+    "lib": "lib/"
+  }
+}
