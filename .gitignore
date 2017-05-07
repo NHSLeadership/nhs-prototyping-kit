@@ -41,5 +41,5 @@ app/assets/stylesheets/*.css
 app/assets/stylesheets/*.scss
 !app/assets/stylesheets/trumps.scss
 
-# Rendered stylesheets in ./public
-public/stylesheets/
+# All ./public
+public
