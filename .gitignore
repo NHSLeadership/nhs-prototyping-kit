@@ -38,3 +38,8 @@ jspm_packages
 
 # Rendered stylesheets in ./app
 app/assets/stylesheets/*.css
+app/assets/stylesheets/*.scss
+!app/assets/stylesheets/trumps.scss
+
+# Rendered stylesheets in ./public
+public/stylesheets/
