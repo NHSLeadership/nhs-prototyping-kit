@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ title }}</title>
+    <title>{{ page }}</title>
 </head>
 <body>
-
+    <header>
+        <p><a href="/">Home</a></p>
+    </header>
     {% block body %}
     {% endblock %}
 
+    <footer>
+        <p>Serving on port {{ port }}</p>
+    </footer>
 </body>
 </html>
