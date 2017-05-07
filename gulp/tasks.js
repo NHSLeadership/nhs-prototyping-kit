@@ -1,3 +1,11 @@
 // tasks.js
 // ============================================================================
-// Gulp task file - blank, a placeholder for some real tasks.
+// default watch and server
+
+var gulp = require('gulp')
+var runSequence = require('run-sequence')
+
+module.exports = gulp.task('default', function (done) {
+  runSequence(  'server',
+                'watch', done)
+})
