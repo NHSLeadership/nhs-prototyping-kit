@@ -22,8 +22,8 @@ module.exports = gulp.task('generate-assets', function (done) {
   runSequence(
                 'sass',
                 'custom-sass',
-                'assets',
-                'custom-assets',
+                //'assets',
+                //'custom-assets',
                 done
             )
 })
