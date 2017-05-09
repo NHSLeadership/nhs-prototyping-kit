@@ -6,8 +6,11 @@
 // BASE SETUP
 // --------------------------------------------------------------------------
 
-var express = require('express');
-var app = express();
+var express = require('express')
+var packageJson = require('./package.json')
+var app = express()
+
+
 // Set port to 3000
 var port = process.env.PORT || 3000;
 app.set(port)
@@ -19,7 +22,7 @@ app.set(port)
 //
 
 // Firstly the requires
-var nunjucks = require('nunjucks');
+var nunjucks = require('nunjucks')
 
 // Location of views
 var appViews = './app/views/'
@@ -50,4 +53,7 @@ app.use(require('./app/routes'))
 // Kick start our server
 app.listen(port);
 // Tell us it's started
-console.log('Server started on port', port);
+var releaseVersion = packageJson.version
+var description = packageJson.description
+console.log('\n' + description + ' v' + releaseVersion)
+console.log('Server started at : http://localhost:' + port)
