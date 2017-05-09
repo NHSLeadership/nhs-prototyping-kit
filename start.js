@@ -24,9 +24,14 @@ if (!nodeModulesExists) {
 // Check `nightingale` folder exists...
 const nightingaleExists = fs.existsSync(path.join(__dirname, '/lib/nightingale'))
 
-// ...and prompt an install if missing
+// ...and get if missing
 if (!nightingaleExists) {
   console.error('ERROR: Nightingale submodule missing.')
+  // Try to get submodule
+  var sys = require('sys')
+  var exec = require('child_process').exec;
+  function puts(error, stdout, stderr) { sys.puts(stdout) }
+  exec("git submodule add -f git://github.com/NHSLeadership/nightingale.git lib/nightingale", puts);
   process.exit(0)
 }
 
