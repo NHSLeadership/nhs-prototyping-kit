@@ -20,6 +20,15 @@ if (!nodeModulesExists) {
   process.exit(0)
 }
 
+// Check we have a `nightingale` submodule otherwise prompt a pull
+// Check `nightingale` folder exists...
+const nightingaleExists = fs.existsSync(path.join(__dirname, '/lib/nightingale'))
+
+// ...and prompt an install if missing
+if (!nightingaleExists) {
+  console.error('ERROR: Nightingale submodule missing.')
+  process.exit(0)
+}
 
 // Gulp
 // ---------------------------------------------------------------------------
