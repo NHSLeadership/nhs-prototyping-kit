@@ -23,7 +23,13 @@ module.exports = gulp.task('generate-assets', function (done) {
                 'sass',
                 'custom-sass',
                 //'assets',
+                'assets-js',
+                'assets-fonts',
+                'assets-images',
                 //'custom-assets',
+                'custom-assets-js',
+                'custom-assets-fonts',
+                'custom-assets-images',
                 done
             )
 })
