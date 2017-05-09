@@ -5,8 +5,10 @@
 // requires
 var gulp = require('gulp')
 var chokidar = require('chokidar')
+
 // Start watch on ./app
-var watcher = chokidar.watch('./app')
+var watcher = chokidar.watch('./app',
+                            {persistent: true})
 
 gulp.task('watch', function () {
     watcher.on('ready', function() {
@@ -15,6 +17,8 @@ gulp.task('watch', function () {
                 Object.keys(require.cache).forEach(function(id) {
                     if (/[\/\\]app[\/\\]/.test(id)) delete require.cache[id]
                 })
+                gulp.start('re-generate-custom-assets')
+                // TODO : This needs to be a bit more specific about what is re-generated
             })
         })
     })

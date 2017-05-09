@@ -5,6 +5,7 @@
 
 var gulp = require('gulp')
 var sourcemaps = require('gulp-sourcemaps')
+var runSequence = require('run-sequence')
 
 // Some config vars to save re-typing
 var config = require('./config.json')
@@ -40,3 +41,14 @@ gulp.task('custom-assets-images', function () {
   gulp.src(config.paths.appAssets + '**/*.{png,jpg,jpeg,svg}')
   .pipe(gulp.dest(config.paths.public + 'images'))
 })
+
+// Regenerate only custom assets
+gulp.task('re-generate-custom-assets', function (done) {
+  runSequence(
+                'custom-sass',
+                'custom-assets-js',
+                'custom-assets-fonts',
+                'custom-assets-images',
+                done
+            )
+    })
