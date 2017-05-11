@@ -20,6 +20,34 @@ if (!nodeModulesExists) {
   process.exit(0)
 }
 
+// Check we have a `nightingale` submodule otherwise prompt a pull
+// Check `nightingale` folder exists...
+const nightingaleExists = fs.existsSync(path.join(__dirname, '/lib/nightingale'))
+
+// ...and get if missing
+if (!nightingaleExists) {
+  console.error('ERROR: Nightingale submodule missing.')
+  // Try to get submodule
+  var sys = require('sys')
+  var exec = require('child_process').exec;
+  function puts(error, stdout, stderr) { sys.puts(stdout) }
+
+  console.info('Adding Nightingale submodule')
+  exec("git submodule add -f git://github.com/NHSLeadership/nightingale.git lib/nightingale", puts);
+  console.info('Please restart the app')
+  process.exit(0)
+}
+
+// Check we have main.sass in `/nightingale`
+const nightingaleHasSass = fs.existsSync('lib/nightingale/main.sass')
+// ...and prompt if missing
+if (!nightingaleHasSass) {
+  console.error('ERROR: Nightingale seems to be empty.')
+  console.info('Delete this app and clone a fresh copy with: ')
+  console.info('git clone https://github.com/NHSLeadership/nhs-prototyping-kit.git')
+  process.exit(0)
+}
+
 
 // Gulp
 // ---------------------------------------------------------------------------
