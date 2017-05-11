@@ -2,7 +2,7 @@
   "paths": {
     "appAssets" : "app/assets/",
     "public" : "public/",
-    "nightingale": "lib/nightingale/",
+    "nightingale": "node_modules/nightingale/",
     "nodeModules": "node_modules/",
     "lib": "lib/"
   }

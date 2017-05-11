@@ -43,3 +43,9 @@ app/assets/stylesheets/*.scss
 
 # All ./public
 public
+
+# Environment
+.env
+
+# OSX Related
+.DS_Store
