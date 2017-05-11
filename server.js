@@ -1,11 +1,11 @@
 /* ==========================================================================
- * #server.js
+ * #SERVER.JS
  * In this file let's get the install checked and the app up and running.
  * ==========================================================================
  */
 
 /**
- * BASE STEUP
+ * #BASE
  * ==========================================================================
  */
 
@@ -20,7 +20,7 @@ app.set(port)
 
 
 /**
- * Use Nunjucks
+ * #NUNJUCKS
  * Configure app to use nunjucks templating style to render views.
  * ==========================================================================
  */
@@ -43,7 +43,7 @@ var nunjucksAppEnv = nunjucks.configure(appViews, {
 app.set('view engine', 'html')
 
 /**
- * Routes
+ * #ROUTES
  * ==========================================================================
  */
 
@@ -52,7 +52,7 @@ app.use(require('./app/routes'))
 
 
 /**
- * Start server
+ * #START
  * ==========================================================================
  */
 
