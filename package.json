@@ -39,6 +39,7 @@
     "nunjucks": "^2.5.2",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.2",
-    "sass-mq": "^3.3.2"
+    "sass-mq": "^3.3.2",
+    "nightingale": "git+ssh://git@github.com/NHSLeadership/nightingale.git#develop"
   }
 }
