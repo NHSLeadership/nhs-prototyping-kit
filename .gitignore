@@ -43,3 +43,6 @@ app/assets/stylesheets/*.scss
 
 # All ./public
 public
+
+# OSX Related
+.DS_Store

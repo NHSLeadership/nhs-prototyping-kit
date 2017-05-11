@@ -1,10 +1,13 @@
-// server.js
-// ==========================================================================
-// In this file let's get the install checked and the app up and running.
+/* ==========================================================================
+ * #server.js
+ * In this file let's get the install checked and the app up and running.
+ * ==========================================================================
+ */
 
-
-// BASE SETUP
-// --------------------------------------------------------------------------
+/**
+ * BASE STEUP
+ * ==========================================================================
+ */
 
 var express = require('express')
 var packageJson = require('./package.json')
@@ -16,10 +19,11 @@ var port = process.env.PORT || 3000;
 app.set(port)
 
 
-// Use Nunjucks
-// ---------------------------------------------------------------------------
-// Configure app to use nunjucks templating style to render views.
-//
+/**
+ * Use Nunjucks
+ * Configure app to use nunjucks templating style to render views.
+ * ==========================================================================
+ */
 
 // Firstly the requires
 var nunjucks = require('nunjucks')
@@ -38,17 +42,19 @@ var nunjucksAppEnv = nunjucks.configure(appViews, {
 // Set views engine
 app.set('view engine', 'html')
 
-// Routes
-// ---------------------------------------------------------------------------
-//
+/**
+ * Routes
+ * ==========================================================================
+ */
 
 // Import routes
 app.use(require('./app/routes'))
 
 
-// Start server
-// ---------------------------------------------------------------------------
-//
+/**
+ * Start server
+ * ==========================================================================
+ */
 
 // Kick start our server
 app.listen(port);
