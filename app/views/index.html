@@ -1,10 +1,49 @@
-{% extends 'layout.html' %}
+{% extends "layout.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+  {# Use direct include for time being until configured correctly. #}
+  {% include "includes/phase_banner_beta.html" %}
+{% endblock %}
 
 {% block body %}
-
     {% block content %}
-        <h1>Page title</h1>
-        <p>Hello world!</p>
+    {# Get some basic content written in #}
+    <div class="o-wrapper">
+      <h1>The NHS prototype kit<h1/>
+      <h2>{{releaseVersion}}</h2>
+
+      <p>Kitty scratches couch bad kitty chase dog then run away and eat prawns
+      daintily with a claw then lick paws clean wash down prawns with a lap of
+      carnation milk then retire to the warmest spot on the couch to claw at the
+      fabric before taking a catnap howl uncontrollably for no reason yet touch
+      water with paw then recoil in horror mrow or swat turds around the house.
+      Kick up litter stick butt in face. Refuse to leave cardboard box wack the
+      mini furry mouse and shake treat bag. Chirp at birds. Knock over christmas
+      tree stare out the window claw drapes, so where is my slave? I'm getting
+      hungry. Licks your face hunt by meowing loudly at 5am next to human slave
+      food dispenser loves cheeseburgers so ask for petting.</p>
+
+      <h3>About this page</h3>
+
+      <p>Cat slap dog in face wake up human for food at 4am stares at human
+      while pushing stuff off a table. Lick sellotape stare at wall turn and
+      meow stare at wall some more meow again continue staring my slave human
+      didn't give me any food so i pooped on the floor so plop down in the
+      middle where everybody walks. Purr while eating stand in front of the
+      computer screen, or scratch the box.</p>
+
+      <h3>Examples</h3>
+        <ol>
+          <li><a href="#0">Kitty</a></li>
+          <li><a href="#0">Cat</a></li>
+        </ol>
+    </div>
     {% endblock %}
 
+{% endblock %}
+
+{% block footer %}
+{# Manually add the template for the time being #}
+  {% include "includes/footer.html" %}
 {% endblock %}

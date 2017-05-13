@@ -1,11 +1,13 @@
-{% include "includes/head.html" %}
-<body>
+{% extends "nhsl_template.html" %}
 
-    <header>
-        <p><a href="/">Home</a></p>
-    </header>
-    {% block body %}
-    {% endblock %}
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
 
-</body>
-</html>
+{% block body %}
+{% endblock %}
+
+{% block footer %}
+  {% include "includes/footer.html" %}
+{% endblock %}
+
