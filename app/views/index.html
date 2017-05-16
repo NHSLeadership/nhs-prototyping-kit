@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 
-{% block head %}
-  {% include "includes/head.html" %}
+{% block phase_banner %}
   {# Use direct include for time being until configured correctly. #}
   {% include "includes/phase_banner_beta.html" %}
 {% endblock %}
@@ -41,9 +40,4 @@
     </div>
     {% endblock %}
 
-{% endblock %}
-
-{% block footer %}
-{# Manually add the template for the time being #}
-  {% include "includes/footer.html" %}
 {% endblock %}

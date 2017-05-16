@@ -4,9 +4,11 @@
   {% include "includes/head.html" %}
 {% endblock %}
 
-{% block body %}
+{% block footer_support_links %}
 {% endblock %}
 
-{% block footer %}
-  {% include "includes/footer.html" %}
+{% block body_end %}
+  {% block scripts %}
+    {% include "includes/scripts.html" ignore missing %}
+  {% endblock %}
 {% endblock %}
