@@ -30,9 +30,10 @@ var nunjucks = require('nunjucks')
 
 // Location of views
 var appViews = './app/views/'
+var nhsViews = './lib/template/views/'
 
 // Configure nunjucks templating engine
-var nunjucksAppEnv = nunjucks.configure(appViews, {
+var nunjucksAppEnv = nunjucks.configure([appViews, nhsViews], {
   autoescape: true,
   express: app,
   noCache: true,
