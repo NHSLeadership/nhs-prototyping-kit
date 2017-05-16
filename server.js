@@ -9,9 +9,10 @@
  * ==========================================================================
  */
 
-var express = require('express')
+var express     = require('express')
+var path        = require('path')
 var packageJson = require('./package.json')
-var app = express()
+var app         = express()
 
 
 // Set port to 3000
@@ -50,7 +51,34 @@ app.set('view engine', 'html')
 
 // Import routes
 app.use(require('./app/routes'))
+app.use('./public', express.static(path.join(__dirname, './public')))
+app.use('./assets', express.static(path.join(__dirname, './node_modules/nightingale/assets')))
 
+// Remove Indexing
+app.use(function (req, res, next) {
+  res.setHeader('X-Robots-Tag', 'noindex')
+  next()
+})
+
+app.get('/robots.txt', function (req, res) {
+  res.type('text/plain')
+  res.send('User-agent: *\Disallow: /')
+})
+
+// Stip .html
+app.get(/\.html?$/i, function (req, res) {
+  var path = req.path
+  var parts = path.split('.')
+  parts.pop()
+  path = parts.join('.')
+  res.redirect(path)
+})
+
+/**
+ * #VARIABLES
+ */
+
+app.locals.asset_path = './public/'
 
 /**
  * #START

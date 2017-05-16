@@ -1,12 +1,10 @@
 {% extends "nhs_template.html" %}
 
-{% block head %}
-  {% include "includes/head.html" ignore missing %}
-{% endblock %}
-
 {# I'm not happy with doing it this way. I'll look at fixing it #}
 {% block phase_banner %}
-{% include "includes/phase_banner_{{ banner }}.html" ignore missing %}
+  {% if phase %}
+    {% include phase %}
+  {% endif %}
 {% endblock %}
 
 {% block footer_support_links %}
