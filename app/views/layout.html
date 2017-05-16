@@ -1,10 +1,16 @@
 {% extends "nhs_template.html" %}
 
 {% block head %}
-  {% include "includes/head.html" %}
+  {% include "includes/head.html" ignore missing %}
+{% endblock %}
+
+{# I'm not happy with doing it this way. I'll look at fixing it #}
+{% block phase_banner %}
+{% include "includes/phase_banner_{{ banner }}.html" ignore missing %}
 {% endblock %}
 
 {% block footer_support_links %}
+  {% include "includes/footer_support_links.html" ignore missing %}
 {% endblock %}
 
 {% block body_end %}
@@ -12,3 +18,5 @@
     {% include "includes/scripts.html" ignore missing %}
   {% endblock %}
 {% endblock %}
+
+
