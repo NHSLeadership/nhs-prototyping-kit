@@ -12,7 +12,8 @@
 var express     = require('express')
 var path        = require('path')
 var packageJson = require('./package.json')
-var app         = express()
+var app         = express() // The designer's app
+var docsApp     = express() // The docs sub app
 
 
 // Set port to 3000
@@ -29,20 +30,38 @@ app.set(port)
 // Firstly the requires
 var nunjucks = require('nunjucks')
 
-// Location of views
+// Location of views and routes
 var appViews = './app/views/'
+var appRoutes = './app/routes'
 var nhsViews = './lib/template/views/'
+var docsAppViews = './docs/views/'
+var docsAppRoutes = './docs/routes'
 
 // Configure nunjucks templating engine
-var nunjucksAppEnv = nunjucks.configure([appViews, nhsViews], {
+
+ var nunjucksAppEnv = nunjucks.configure([appViews, nhsViews], {
   autoescape: true,
   express: app,
   noCache: true,
   watch: true
 })
 
+var nunjucksDocsAppEnv = nunjucks.configure([docsAppViews, nhsViews], {
+  autoescape: true,
+  express: docsApp,
+  noCache: true,
+  watch: true
+})
+
+// Nunjucks filters
+/**
+utils.addNunjucksFilters(nunjucksAppEnv)
+utils.addNunjucksFilters(nunjucksDocsAppEnv)
+*/
+
 // Set views engine
 app.set('view engine', 'html')
+docsApp.set('view engine', 'html')
 
 /**
  * #ROUTES
@@ -50,8 +69,14 @@ app.set('view engine', 'html')
  */
 
 // Import routes
-app.use(require('./app/routes'))
+app.use(require(appRoutes))
 app.use('./public', express.static(path.join(__dirname, './public')))
+
+// Mount the sub-app
+app.use('/docs', docsApp)
+// Docs app under the /docs namespace
+//docsApp.use('/', docsAppRoutes)
+docsApp.use(require(docsAppRoutes))
 
 // Remove Indexing
 app.use(function (req, res, next) {
@@ -73,11 +98,14 @@ app.get(/\.html?$/i, function (req, res) {
   res.redirect(path)
 })
 
+
 /**
  * #VARIABLES
  */
 
 app.locals.asset_path = './public/'
+// Documentation app locals copy app locals
+docsApp.locals.asset_path = app.locals.asset_path
 
 /**
  * #START
