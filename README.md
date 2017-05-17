@@ -14,7 +14,7 @@ Once installed, the kit uses about 100mb of your computer's disk space.
 
 ## Requirements
 
-The prototypking kit runs on MacOS, Windows and Linux. Please make sure you've
+The prototyping kit runs on MacOS, Windows and Linux. Please make sure you've
 got the following:
 
 - Admin access to your machine
@@ -69,7 +69,7 @@ than 6.x.x LTS then you'll need to download the latest version.
 Visit https://nodejs.org/en/ and download the LTS version. Run the installer
 with the default options..
 
-## Install commandline tools
+## Install command line tools
 ```xcode-select --install```
 
 ## Download the kit
