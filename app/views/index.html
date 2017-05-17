@@ -1,10 +1,44 @@
-{% extends 'layout.html' %}
+{% extends "layout.html" %}
+
+{#{% set phase = "includes/phase_banner_alpha.html" %} #}
 
 {% block body %}
-
     {% block content %}
-        <h1>Page title</h1>
-        <p>Hello world!</p>
+
+    {# Get some basic content written in #}
+
+    <div class="o-wrapper">
+
+      <img src="images/logo-nhs.png" alt="" height="52" class="u-margin-bottom" style="vertical-align: middle;" />
+
+      <h1>The NHS prototyping kit<h1/>
+      <h1>{{releaseVersion}}</h1>
+
+      <p>This kit lets you rapidly create HTML prototypes of NHS Leadership
+      Academy's work</p>
+
+      <p>It contains all you need to prototype anything from simple static pages
+      to complex, visual documents.</p>
+
+      <h2>About this page</h2>
+
+      <p>We recommend you add links to your prototype to this page, rather than
+      deleting it. You'll find this page in the kit at '/app/views/index.html'.</p>
+
+      <p>You can change various configurable elements by editing the
+      '/app/config.js'
+
+      <h2>Examples</h2>
+        <ol>
+          <li><a href="#0">Example pages and documentation</a></li>
+          <li><a href="#0">GitHub</a></li>
+        </ol>
+
+      <h2>Other resources</h2>
+        <ol>
+          <li><a href="#0">Example</a></li>
+        </ol>
+    </div>
     {% endblock %}
 
 {% endblock %}

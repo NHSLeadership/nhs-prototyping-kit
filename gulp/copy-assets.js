@@ -17,7 +17,7 @@ gulp.task('assets-js', function () {
 })
 
 gulp.task('assets-fonts', function () {
-    gulp.src(config.paths.nightingale + 'assets/fonts/**/*.{ttf,woff,eof,svg}')
+    gulp.src(config.paths.nightingale + 'assets/fonts/**/*.{ttf,woff,woff2,eot,eof,svg}')
   .pipe(gulp.dest(config.paths.public + 'fonts'))
 })
 
@@ -33,7 +33,7 @@ gulp.task('custom-assets-js', function () {
 })
 
 gulp.task('custom-assets-fonts', function () {
-  gulp.src(config.paths.appAssets + 'assets/fonts/**/*.{ttf,woff,eof,svg}')
+  gulp.src(config.paths.nightingale + 'assets/fonts/**/*.{ttf,woff,eof,svg}')
   .pipe(gulp.dest(config.paths.public + 'fonts'))
 })
 
