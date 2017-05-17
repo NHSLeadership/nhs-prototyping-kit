@@ -12,6 +12,7 @@
 var express     = require('express')
 var path        = require('path')
 var packageJson = require('./package.json')
+var config      = require('./app/config.js') // App's config
 var app         = express() // The designer's app
 var docsApp     = express() // The docs sub app
 
@@ -104,9 +105,11 @@ app.get(/\.html?$/i, function (req, res) {
  */
 
 app.locals.asset_path = './public/'
-// Documentation app locals copy app locals
-docsApp.locals.asset_path = app.locals.asset_path
-
+docsApp.locals.asset_path = app.locals.asset_path // Documentation app locals copy app locals
+// In-app variables
+app.locals.serviceName = config.serviceName
+app.locals.prototypeVersion = config.prototypeVersion
+app.locals.releaseVersion = packageJson.version
 /**
  * #START
  * ==========================================================================

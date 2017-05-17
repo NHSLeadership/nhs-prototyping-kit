@@ -15,6 +15,10 @@ router.get('/', function(req, res) {
     res.render('index')
 })
 
+router.get('/install', function(req, res) {
+    res.render('install')
+})
+
 // Static assets
 router.use(express.static('./public'))
 
