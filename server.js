@@ -30,7 +30,7 @@ var useDocumentation = (config.useDocumentation === 'true')
  * ==========================================================================
  */
 
-// Routes setup
+// Paths setup
 var appViews = './app/views/'
 var appRoutes = './app/routes'
 var templateViews = './lib/template/views/'
@@ -50,30 +50,44 @@ app.set('view engine', 'html')
 app.use('./public', express.static(path.join(__dirname, './public')))
 app.use('./public', express.static(path.join(__dirname, './node_modules/nightingale/assets')))
 
+// Setup documentation application
+
 if (useDocumentation) {
-  docsApp.locals = app.locals
+  var documentationViews = [path.join(__dirname, './docs/views/'), path.join(__dirname, './lib/')]
 
-  app.use('/docs', docsApp)
-
-  docsApp.use('/', docRoutes)
-
-  docsApp.get(/^\/([^.]+)$/, function (req, res) {
-    if (!utils.matchMdRoutes(req, res)) {
-      utils.matchRoutes(req, res)
-    }
+  var nunjucksDocumentationEnv  = nunjucks.configure(documentationViews, {
+    autoescape: true,
+    express   : documentationApp,
+    noCache   : true,
+    watch     : true
   })
+
+  documentationApp.set('view engine', 'html')
 }
 
-/**
- * #SEO Related
+/**==========================================================================
+ * Define varliables across views
+ * ==========================================================================
  */
 
-// Remove Indexing
+
+app.locals.asset_path     = '/public/'
+app.locals.cookieTest     = config.cookieText
+app.locals.releaseVersion = 'v' + releaseVersion
+app.locals.serviceName    = config.serviceName
+
+/**==========================================================================
+ * Define SEO and Route niceties and others.s
+ * ==========================================================================
+ */
+
+// Remove bot indexing
 app.use(function (req, res, next) {
   res.setHeader('X-Robots-Tag', 'noindex')
   next()
 })
 
+// Standard disallow all.
 app.get('/robots.txt', function (req, res) {
   res.type('text/plain')
   res.send('User-agent: * \nDisallow: /')
@@ -88,16 +102,26 @@ app.get(/\.html?$/i, function (req, res) {
   res.redirect(path)
 })
 
+// App folder routes priority
+app.get(/^\/([^.]+)$/, function (req, res) {
+    utils.matchRoutes(req, res)
+})
 
-/**
- * #VARIABLES
- */
+// Documentation check
+if (useDocumentation) {
+  documentationApp.locals = app.locals
 
-app.locals.asset_path = '/public/'
-// In-app variables
-app.locals.serviceName = config.serviceName
-app.locals.prototypeVersion = config.prototypeVersion
-app.locals.releaseVersion = packageJson.version
+  app.use('/docs', documentationApp)
+
+  documentationApp.use('/', documentationRoutes)
+
+  documentationApp.get(/^\/([^.]+)$/, function (req, res) {
+    if(!utils.matchMdRoutes(req, res)) {
+      utils.matchRoutes(req, res)
+    }
+  })
+}
+
 /**
  * #START
  * ==========================================================================
