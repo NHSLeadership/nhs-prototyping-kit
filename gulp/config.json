@@ -1,9 +1,10 @@
 {
   "paths": {
     "appAssets" : "app/assets/",
-    "public" : "public/",
+    "docsAssets" : "docs/assets/",
+    "lib": "lib/",
     "nightingale": "node_modules/nightingale/",
     "nodeModules": "node_modules/",
-    "lib": "lib/"
+    "public" : "public/"
   }
 }

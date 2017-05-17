@@ -14,6 +14,11 @@ module.exports = {
   prototypeVersion: '1.0',
 
 
+  useDocumentation: 'true',
+
+  phaseBanner: 'alpha',
+
+
   // Other variables
   // (use {{releaseVersion}} for the prototyping kit version)
 }

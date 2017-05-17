@@ -2,8 +2,8 @@
 
 {# I'm not happy with doing it this way. I'll look at fixing it #}
 {% block phase_banner %}
-  {% if phase %}
-    {% include phase %}
+  {% if phaseBanner %}
+    {% include "includes/phase_banner_{{ phaseBanner }}.html" %}
   {% endif %}
 {% endblock %}
 

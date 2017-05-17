@@ -20,13 +20,3 @@ gulp.task('sass', function(){
     .pipe(gulp.dest(config.paths.public + 'stylesheets/')
 )
 });
-
-gulp.task('custom-sass', function(){
-    // Nightingale
-    return gulp.src(config.paths.appAssets + 'stylesheets/trumps.scss')
-      // Gulp-sass: Convert Sass to CSS
-      .pipe(sass().on('error', sass.logError))
-      // Output CSS destination
-      .pipe(gulp.dest(config.paths.public + 'stylesheets/')
-  )
-  });
