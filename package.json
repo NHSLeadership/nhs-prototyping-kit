@@ -37,7 +37,7 @@
     "gulp-nodemon": "^2.1.0",
     "gulp-sass": "3.1.0",
     "gulp-sourcemaps": "^1.6.0",
-    "nightingale": "git+ssh://git@github.com/NHSLeadership/nightingale.git#develop",
+    "nightingale": "https://github.com/NHSLeadership/nightingale.git#tkt-00052",
     "nunjucks": "^2.5.2",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.2",
