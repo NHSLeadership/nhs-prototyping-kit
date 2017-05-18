@@ -20,3 +20,12 @@ gulp.task('sass', function(){
     .pipe(gulp.dest(config.paths.public + 'stylesheets/')
 )
 });
+
+gulp.task('sass-documentation', function () {
+  return gulp.src(config.paths.docsAssets + '/sass/*.scss')
+  .pipe(sourcemaps.init())
+  .pipe(sass({outputStyle: 'expanded',
+    includePaths: 'node_modules/nightingale/'}).on('error', sass.logError))
+  .pipe(sourcemaps.write())
+  .pipe(gulp.dest(config.paths.public + '/stylesheets/'))
+})

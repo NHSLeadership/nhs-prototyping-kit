@@ -30,7 +30,7 @@ gulp.task('assets-images', function () {
 
 // Copy custom assets
 gulp.task('custom-assets-js', function () {
-  gulp.src(config.paths.appAssets + '/**/*.js')
+  gulp.src(config.paths.assets + '/**/*.js')
   .pipe(gulp.dest(config.paths.public))
 })
 
@@ -40,7 +40,7 @@ gulp.task('custom-assets-fonts', function () {
 })
 
 gulp.task('custom-assets-images', function () {
-  gulp.src(config.paths.appAssets + '**/*.{png,jpg,jpeg,svg}')
+  gulp.src(config.paths.assets + '**/*.{png,jpg,jpeg,svg}')
   .pipe(gulp.dest(config.paths.public + 'images'))
 })
 

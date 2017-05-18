@@ -4,6 +4,7 @@
 // Routes setup
 // ---------------------------------------------------------------------------
 // use Router object
+
 var express = require('express')
 var router = express.Router()
 
@@ -22,9 +23,6 @@ router.get('/', function(req, res) {
 //     res.render('page-name')
 // });
 
-
-// Static assets
-router.use(express.static('./public'))
 
 // Export routes
 // ---------------------------------------------------------------------------
