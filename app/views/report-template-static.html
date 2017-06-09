@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{#{% set phase = "includes/phase_banner_alpha.html" %} #}
+
+{% block body %}
+    {% block content %}
+      <div class="o-wrapper">
+
+        <img src="images/logo-nhs.png" alt="" height="52" class="u-margin-bottom" style="vertical-align: middle;" />
+
+        {% block report_heading %}
+          <h2>Key insights</h2>
+        {% endblock %}
+
+        <p>Executive summary - what this is in a paragraph.</p>
+
+        {% block report_description %}
+          <p class="report-description-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+        {% endblock %}
+
+        {% block stats_summary_heading %}
+          <h1>{{staticReportSummary}}</h1>
+          <p>organisation wide rating</p>
+          <p></p>
+        {% endblock %}
+
+        {% block stats_section %}
+          <div class="o-layout">
+            <div class="o-layout__item  u-8/12@lg">
+
+              <strong class="report-stats">{{staticOrgExperience}}</strong>
+              <p class="report-description-text">variance in experience across the organisation</p>
+
+              <strong class="report-stats">{{staticStaffExperienceScore}}</strong>
+              <p class="report-description-text">experience amongst staff than HR / TM /OD leads expect</p>
+
+              <strong class="report-stats">{{staticHigherRegionOrgs}}</strong>
+              <p class="report-description-text">organisations in your region rate higher</p>
+
+              <strong class="report-stats">{{staticHigherNationalOrgs}}</strong>
+              <p class="report-description-text">organisations nationally rate higher</p>
+
+            </div>
+
+            <div class="o-layout__item  u-4/12@lg">
+
+              <strong class="report-stats">{{staticHighestScoringDomain}}</strong>
+              <p class="report-description-text">is your highest scoring domain</p>
+
+              <strong class="report-stats">{{staticLowestScoringDomain}}</strong>
+              <p class="report-description-text">is your lowest scoring domain</p>
+
+              <strong class="report-stats">{{staticHiddenStrength}}</strong>
+              <p class="report-description-text">is your hidden strength</p>
+              <p><small><i>Your staff experience of this domain is higher than HR / TM / OD lead and Senior Leader perspectives</i></small></p>
+
+              <strong class="report-stats">{{staticBlindSpot}}</strong>
+              <p class="report-description-text">is your blind spot</p>
+              <p><small><i>Your staff experience of this domain is higher than HR / TM / OD lead and Senior Leader perspectives</i></small></p>
+
+            </div>
+
+          </div>
+
+        {% endblock %}
+
+
+      </div>
+    {% endblock %}
+
+{% endblock %}

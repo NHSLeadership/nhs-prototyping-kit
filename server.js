@@ -110,6 +110,33 @@ docsApp.locals.asset_path = app.locals.asset_path // Documentation app locals co
 app.locals.serviceName = config.serviceName
 app.locals.prototypeVersion = config.prototypeVersion
 app.locals.releaseVersion = packageJson.version
+
+/**
+ * #STATIC REPORT VARIABLES
+ */
+ app.locals.staticReportSummary = config.staticReportSummary
+ app.locals.staticOrgExperience = config.staticOrgExperience
+ app.locals.staticStaffExperienceScore = config.staticStaffExperienceScore
+ app.locals.staticHigherRegionOrgs = config.staticHigherRegionOrgs
+ app.locals.staticHigherNationalOrgs = config.staticHigherNationalOrgs
+ app.locals.staticHighestScoringDomain = config.staticHighestScoringDomain
+ app.locals.staticLowestScoringDomain = config.staticLowestScoringDomain
+ app.locals.staticHiddenStrength = config.staticHiddenStrength
+ app.locals.staticBlindSpot = config.staticBlindSpot
+
+ /**
+  * #GRAPH REPORT VARIABLES
+  */
+  app.locals.graphReportSummary = config.graphReportSummary
+  app.locals.graphOrgExperience = config.graphOrgExperience
+  app.locals.graphStaffExperienceScore = config.graphStaffExperienceScore
+  app.locals.graphBetterExperienceStaff = config.graphBetterExperienceStaff
+  app.locals.graphLowerExperienceStaff = config.graphLowerExperienceStaff
+  app.locals.graphHigherRegionOrgs = config.graphHigherRegionOrgs
+  app.locals.graphHigherNationalOrgs = config.graphHigherNationalOrgs
+
+
+
 /**
  * #START
  * ==========================================================================

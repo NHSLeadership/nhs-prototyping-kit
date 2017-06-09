@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{#{% set phase = "includes/phase_banner_alpha.html" %} #}
+
+{% block body %}
+    {% block content %}
+      <div class="o-wrapper">
+
+        <img src="images/logo-nhs.png" alt="" height="52" class="u-margin-bottom" style="vertical-align: middle;" />
+
+        {% block report_heading %}
+          <h2>Understanding concepts</h2>
+        {% endblock %}
+
+        {% block report_description %}
+          <p class="report-description-text">What this is in a paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+        {% endblock %}
+
+        {% block stats_summary_heading %}
+          <h1>{{graphReportSummary}}</h1>
+          <p>organisation wide rating in this domain</p>
+          <p></p>
+        {% endblock %}
+
+        {% block stats_section %}
+          <div class="o-layout">
+            <div class="o-layout__item  u-8/12@lg">
+
+              <strong class="report-stats">{{graphOrgExperience}}</strong>
+              <p class="report-description-text">variance in experience across the organisation in this domain</p>
+
+              <strong class="report-stats">{{graphStaffExperienceScore}}</strong>
+              <p class="report-description-text">experience amongst staff than HR / TM /OD leads expect</p>
+
+              <strong class="report-stats graph-report-redtext">{{graphBetterExperienceStaff}}</strong>
+              <p class="report-description-text">have a better experience of the organisation in this domain</p>
+
+            </div>
+
+            <div class="o-layout__item  u-4/12@lg">
+
+              <strong class="report-stats graph-report-greentext">{{graphLowerExperienceStaff}}</strong>
+              <p class="report-description-text">have a lower experience of the organisation in this domain</p>
+
+              <strong class="report-stats">{{graphHigherRegionOrgs}}</strong>
+              <p class="report-description-text">organisations in your region rate higher in this domain</p>
+
+              <strong class="report-stats">{{graphHigherNationalOrgs}}</strong>
+              <p class="report-description-text">organisations nationally rate higher in this domain</p>
+
+            </div>
+          </div>
+        {% endblock %}
+
+        {% block graph_section %}
+        <div class="o-layout">
+          <div class="o-layout__item  u-3/12@lg">
+            <p></p>
+            <p>HR / TM / OD Lead perspective</p>
+            <p>Senior Leaders perspective</p>
+            <p>Other staff perspective</p>
+          </div>
+          <div class="o-layout__item  u-3/12@lg">
+            <p>Low</p>
+            <p class="report-description-text">30%</p>
+            <p class="report-description-text">72%</p>
+            <p class="report-description-text">75%</p>
+          </div>
+
+          <div class="o-layout__item  u-3/12@lg">
+            <p>Developing</p>
+            <p class="report-description-text">60%</p>
+            <p class="report-description-text">18%</p>
+            <p class="report-description-text">20%</p>
+          </div>
+
+          <div class="o-layout__item  u-3/12@lg">
+            <p>Good</p>
+            <p class="report-description-text">10%</p>
+            <p class="report-description-text">10%</p>
+            <p class="report-description-text">5%</p>
+          </div>
+        </div>
+        {% endblock %}
+
+      </div>
+    {% endblock %}
+
+{% endblock %}

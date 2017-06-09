@@ -13,6 +13,25 @@ module.exports = {
   // use this variable in views with {{prototypeVersion}}
   prototypeVersion: '1.0',
 
+  //Static Report variables
+  staticReportSummary: 'Developing',
+  staticOrgExperience: '36%',
+  staticStaffExperienceScore: 'Lower',
+  staticHigherRegionOrgs: '3',
+  staticHigherNationalOrgs: '20',
+  staticHighestScoringDomain: 'Understanding concepts',
+  staticLowestScoringDomain: 'Senior leadership acceptance and modelling',
+  staticHiddenStrength: 'Understanding concepts',
+  staticBlindSpot: 'Talent management in strategy',
+
+  //Graph Report variables
+  graphReportSummary: 'Low',
+  graphOrgExperience: '22%',
+  graphStaffExperienceScore: 'Lower',
+  graphBetterExperienceStaff: 'HR/TM/OD Leads',
+  graphLowerExperienceStaff: 'Other staff',
+  graphHigherRegionOrgs: '5',
+  graphHigherNationalOrgs: '51',
 
   // Other variables
   // (use {{releaseVersion}} for the prototyping kit version)

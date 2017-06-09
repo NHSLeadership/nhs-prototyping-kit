@@ -22,6 +22,15 @@ router.get('/', function(req, res) {
 //     res.render('page-name')
 // });
 
+//Report Template static
+router.get('/report-template-static', function(req, res) {
+    res.render('report-template-static')
+});
+
+//Report Template graph
+router.get('/report-template-graph', function(req, res) {
+    res.render('report-template-graph')
+});
 
 // Static assets
 router.use(express.static('./public'))
