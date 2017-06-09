@@ -183,12 +183,13 @@ if (useDocumentation) {
  */
 
 // Kick start our server
-app.listen(port);
+utils.findAvailablePort(app, function (port) {
+  app.listen(port)
+})
 
 // Tell us it's started
 var releaseVersion = packageJson.version
 var description = packageJson.description
 console.log('\n' + description + ' v' + releaseVersion)
-console.log('Server started at : http://localhost:' + port)
 
 module.exports = app
