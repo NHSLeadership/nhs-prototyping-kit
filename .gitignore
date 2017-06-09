@@ -49,3 +49,4 @@ public
 
 # OSX Related
 .DS_Store
+*.un~

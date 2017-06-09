@@ -544,17 +544,17 @@ debug-log@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debug-log/-/debug-log-1.0.1.tgz#2307632d4c04382b8df8a32f70b895046d52745f"
 
-debug@2.X, debug@^2.1.1, debug@^2.2.0, debug@^2.6.0:
-  version "2.6.6"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.6.tgz#a9fa6fbe9ca43cf1e79f73b75c0189cbb7d6db5a"
-  dependencies:
-    ms "0.7.3"
-
-debug@~2.2.0:
+debug@2.X, debug@^2.1.1, debug@^2.2.0, debug@~2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.2.0.tgz#f87057e995b1a1f6ae6a4960664137bc56f039da"
   dependencies:
     ms "0.7.1"
+
+debug@^2.6.0:
+  version "2.6.6"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.6.tgz#a9fa6fbe9ca43cf1e79f73b75c0189cbb7d6db5a"
+  dependencies:
+    ms "0.7.3"
 
 decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
@@ -2284,12 +2284,13 @@ nested-error-stacks@^1.0.0:
   dependencies:
     inherits "~2.0.1"
 
-"nightingale@https://github.com/NHSLeadership/nightingale.git#tkt-00052":
+"nightingale@https://github.com/NHSLeadership/nightingale.git#tkt-00063":
   version "1.0.0"
-  resolved "https://github.com/NHSLeadership/nightingale.git#989ca456551e2b8fe0c2c5ca5683e1bcfb0d13ec"
+  resolved "https://github.com/NHSLeadership/nightingale.git#0d2ce53ebd513c737c07b686c57c6d7d476490c4"
   dependencies:
     autoprefixer "^6.7.7"
     node-sass "^4.5.0"
+    normalize.css "^7.0.0"
     sass-mq "^3.3.2"
     stylelint "^7.9.0"
 
@@ -2404,6 +2405,10 @@ normalize-range@^0.1.2:
 normalize-selector@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/normalize-selector/-/normalize-selector-0.2.0.tgz#d0b145eb691189c63a78d201dc4fdb1293ef0c03"
+
+normalize.css@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-7.0.0.tgz#abfb1dd82470674e0322b53ceb1aaf412938e4bf"
 
 "npmlog@0 || 1 || 2 || 3 || 4", npmlog@^4.0.0, npmlog@^4.0.2:
   version "4.1.0"

@@ -24,11 +24,17 @@ var packageJson          = require('./package.json')
 var releaseVersion = packageJson.version
 var port = process.env.PORT || 3000;
 var env = process.env.NODE_ENV || 'development'
-env = env.toLowerCase()
-var phaseBanner = process.env.PHASE_BANNER || config.phaseBanner
 var useDocumentation = (config.useDocumentation === 'true')
 var promoMode = process.env.PROMO_MODE || 'false'
+var username = process.env.USERNAME
+var password = process.env.PASSWORD
+var useHttps = process.env.USE_HTTPS || config.useHttps
+var useAuth = process.env.USE_AUTH || config.useAuth
+
+env = env.toLowerCase()
+useHttps = useHttps.toLowerCase()
 promoMode = promoMode.toLowerCase()
+useAUth = useAuth.toLowerCase()
 
 if (!useDocumentation) promoMode = 'false'
 
@@ -36,6 +42,17 @@ if (!useDocumentation) promoMode = 'false'
  * Define Routes, Endpoints, Paths below:
  * ==========================================================================
  */
+
+var isSecure = (env === 'production' && useHttps === 'true')
+
+if (isSecure) {
+  app.use(utils.forceHttps)
+  app.set('trust proxy',1)
+}
+
+if (env === 'production' && useAuth === 'true') {
+    app.use(utils.basicAuth(username, password))
+}
 
 // Paths setup
 var appViews = [path.join(__dirname, '/app/views/'), path.join(__dirname, '/lib/'), path.join(__dirname, '/lib/template/views/')]

@@ -39,7 +39,7 @@
     "gulp-sass": "3.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "marked": "^0.3.6",
-    "nightingale": "https://github.com/NHSLeadership/nightingale.git#tkt-00052",
+    "nightingale": "https://github.com/NHSLeadership/nightingale.git#tkt-00063",
     "nunjucks": "^2.5.2",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.2",

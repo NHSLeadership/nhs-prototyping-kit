@@ -1,0 +1,6 @@
+{
+  "name": "NHS Prototyping Kit",
+  "description": "Quickly scaffold HTML templates using NHS styles",
+  "repository": "https://github.com/NHSLeadership/nhs-prototyping-kit",
+  "keywords": ["node","express","nunjucks","nhsla"]
+}

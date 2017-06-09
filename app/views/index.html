@@ -5,38 +5,41 @@
 
     {# Get some basic content written in #}
 
-    <div class="o-wrapper">
+    <div class="o-wrapper"> 
 
-      <img src="{{ asset_path }}images/logo-nhs.png" alt="" height="52" class="u-margin-bottom" style="vertical-align: middle;" />
+      <main class="o-layout__item u-8/12@lg">
 
-      <h1>The NHS prototyping kit<h1/>
-      <h1>{{releaseVersion}}</h1>
+        <h1>NHS prototyping kit</h1>
 
-      <p>This kit lets you rapidly create HTML prototypes of NHS Leadership
-      Academy's work</p>
+        <p>This kit lets you rapidly create HTML prototypes of NHS Leadership
+        Academy's work</p>
 
-      <p>It contains all you need to prototype anything from simple static pages
-      to complex, visual documents.</p>
+        <p>It contains all you need to prototype anything from simple static pages
+        to complex, visual documents.</p>
 
-      <h2>About this page</h2>
+        <h2>About this page</h2>
 
-      <p>We recommend you add links to your prototype to this page, rather than
-      deleting it. You'll find this page in the kit at '/app/views/index.html'.</p>
+        <p>We recommend you add links to your prototype to this page, rather than
+        deleting it. You'll find this page in the kit at '/app/views/index.html'.</p>
 
-      <p>You can change various configurable elements by editing the
-      '/app/config.js'
+        <p>You can change various configurable elements by editing the
+        '/app/config.js'
 
-      <h2>Examples</h2>
-        <ol>
-          <li><a href="/docs">Example pages and documentation</a></li>
-          <li><a href="https://github.com/NHSLeadership/nhs-prototyping-kit">GitHub</a></li>
-        </ol>
+        <h2>Examples</h2>
+          <ol>
+            <li><a href="/docs">Example pages and documentation</a></li>
+            <li><a href="https://github.com/NHSLeadership/nhs-prototyping-kit">GitHub</a></li>
+          </ol>
 
-      <h2>Other resources</h2>
-        <ol>
-          <li><a href="https://github.com/NHSLeadership/nhs-prototyping-kit">Frontend Framework</a></li>
-        </ol>
+        <h2>Other resources</h2>
+          <ol>
+            <li><a href="https://github.com/NHSLeadership/nhs-prototyping-kit">Frontend Framework</a></li>
+          </ol>
+
+      </main><!-- /.o-layout__item -->
+
     </div>
     {% endblock %}
+
 
 {% endblock %}

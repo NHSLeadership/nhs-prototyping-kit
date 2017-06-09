@@ -10,6 +10,13 @@
     <link rel="preload" href="{{ asset_path }}fonts/8c92eb68-ce37-4962-a9f4-5b47d336bd1c.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="{{ asset_path }}stylesheets/main.css" />
 
+    <script>
+      (function(){
+        var page = document.getElementById('jsPage');
+        page.classList.remove('no-js');
+      }());
+    </script>
+
     {% block head_end %}{% endblock %}
 
 </head>
@@ -26,6 +33,9 @@
     {% block phase_banner %}{% endblock %}
 
     <header class="{% block header_class %}{% endblock %}">
+      <div class="o-wrapper">
+        {% block header_content %}{% endblock %}
+      </div>
     </header>
 
     {% block after_header %}{% endblock %}
@@ -37,7 +47,8 @@
       <div class="o-wrapper">
         <div class="o-layout">
           {% block footer_support_links %}{% endblock %}
-        </div>
+        </
+        div>
       </div>
     </footer>
 
