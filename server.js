@@ -183,7 +183,7 @@ if (useDocumentation) {
  */
 
 // Kick start our server
-app.listen(port);
+app.listen(process.env.PORT || 5000);
 // Tell us it's started
 var releaseVersion = packageJson.version
 var description = packageJson.description
