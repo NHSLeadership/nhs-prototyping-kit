@@ -30,6 +30,8 @@
   },
   "homepage": "https://github.com/NHSLeadership/nhs-prototyping-kit#readme",
   "dependencies": {
+    "basic-auth": "^1.0.3",
+    "basic-auth-connect": "^1.0.0",
     "chokidar": "^1.6.1",
     "cross-spawn": "^5.0.0",
     "dotenv": "^4.0.0",
