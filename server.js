@@ -65,8 +65,6 @@ var nunjucksAppEnv = nunjucks.configure(appViews, {
   watch: true
 })
 
-utils.addNunjucksFilters(nunjucksAppEnv)
-
 // Set views engine
 app.set('view engine', 'html')
 
@@ -85,8 +83,6 @@ if (useDocumentation) {
     noCache: true,
     watch: true
   })
-  // Nunjucks filters
-  utils.addNunjucksFilters(nunjucksDocumentationEnv)
 
   // Set views engine
   documentationApp.set('view engine', 'html')
