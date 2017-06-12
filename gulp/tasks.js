@@ -8,7 +8,7 @@ var gulp = require('gulp')
 var runSequence = require('run-sequence')
 
 // export to app gulp task responce
-module.exports = gulp.task('default', function (done) {
+gulp.task('default', function (done) {
     // run sequence
     runSequence(
                 'generate-assets',
@@ -18,18 +18,15 @@ module.exports = gulp.task('default', function (done) {
             )
 })
 
-module.exports = gulp.task('generate-assets', function (done) {
+gulp.task('generate-assets', function (done) {
   runSequence(
+                'copy-nightingale',
                 'sass',
                 'sass-documentation',
-                //'assets',
-                'assets-js',
-                'assets-fonts',
-                'assets-images',
-                //'custom-assets',
-                'custom-assets-js',
-                'custom-assets-fonts',
-                'custom-assets-images',
-                done
-            )
+                'copy-assets',
+                'copy-documentation-assets', done)
 })
+
+gulp.task('copy-nightingale', [
+  'copy-toolkit'
+])

@@ -18,7 +18,7 @@ var documentationApp     = express()
 var config               = require('./app/config.js') // Main config
 var utils                = require('./lib/utils.js')
 var packageJson          = require('./package.json')
-var port                 = process.env.PORT
+var port                 = process.env.PORT | 3000
 
 // Environments
 

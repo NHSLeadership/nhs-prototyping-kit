@@ -4,7 +4,7 @@
     "assets"     : "app/assets/",
     "docsAssets" : "docs/assets/",
     "lib"        : "lib/",
-    "nightingale": "node_modules/nightingale/",
+    "nightingale": "nightingale/",
     "nodeModules": "node_modules/"
   }
 }
