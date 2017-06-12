@@ -19,7 +19,7 @@ module.exports = {
 
   // Other variables
   // (use {{releaseVersion}} for the prototyping kit version)
-  useAuth: 'true',
+  useAuth: 'false',
 
-  useHttps: 'true'
+  useHttps: 'false'
 }
