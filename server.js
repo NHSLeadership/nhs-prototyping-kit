@@ -22,7 +22,6 @@ var packageJson          = require('./package.json')
 // Environments
 
 var releaseVersion = packageJson.version
-var port = process.env.PORT || 5000
 var env = process.env.NODE_ENV || 'development'
 var useDocumentation = (config.useDocumentation === 'true')
 var promoMode = process.env.PROMO_MODE || 'false'
@@ -179,9 +178,7 @@ if (useDocumentation) {
  */
 
 // Kick start our server
-utils.findAvailablePort(app, function (port) {
-  app.listen(port)
-})
+app.listen(port)
 
 // Tell us it's started
 var releaseVersion = packageJson.version
