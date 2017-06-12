@@ -18,7 +18,6 @@ var documentationApp     = express()
 var config               = require('./app/config.js') // Main config
 var utils                = require('./lib/utils.js')
 var packageJson          = require('./package.json')
-var port                 = process.env.PORT | 3000
 
 // Environments
 
@@ -173,13 +172,9 @@ if (useDocumentation) {
   })
 }
 
-/**
- * #START
- * ==========================================================================
- */
-
 // Kick start our server
 app.listen(port)
+console.log('Listening on port ' + port + ' url: https://nhs-prototyping-kit.herokuapp.com:' + port)
 
 // Tell us it's started
 var releaseVersion = packageJson.version
