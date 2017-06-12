@@ -18,13 +18,14 @@ gulp.task('default', function (done) {
             )
 })
 
-gulp.task('generate-assets', function (done) {
+gulp.task('generate-assets', function () {
   runSequence(
                 'copy-nightingale',
                 'sass',
                 'sass-documentation',
                 'copy-assets',
-                'copy-documentation-assets', done)
+                'copy-documentation-assets')
+  process.exit(0);
 })
 
 gulp.task('copy-nightingale', [

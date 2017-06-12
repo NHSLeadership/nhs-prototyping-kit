@@ -29,6 +29,7 @@ var username = process.env.USERNAME
 var password = process.env.PASSWORD
 var useHttps = process.env.USE_HTTPS || config.useHttps
 var useAuth = process.env.USE_AUTH || config.useAuth
+var port  = process.env.PORT  || config.port
 
 env = env.toLowerCase()
 useHttps = useHttps.toLowerCase()
