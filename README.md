@@ -1,4 +1,6 @@
 # NHS Prototyping Kit
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 Quickly create HTML prototypes of NHS services using the Nightingale framework
 
 # Introduction
