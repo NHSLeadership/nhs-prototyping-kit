@@ -1,9 +1,7 @@
-/** ============================================================================
- *  copy.js
- *  ============================================================================
- */
-
+// copy.js
+// ============================================================================
 // Copy images and javascript folders into ./public
+//
 
 var gulp = require('gulp')
 var sourcemaps = require('gulp-sourcemaps')
@@ -12,14 +10,19 @@ var runSequence = require('run-sequence')
 // Some config vars to save re-typing
 var config = require('./config.json')
 
-gulp.task('copy-assets', function () {
-    return gulp.src(['!' + config.paths.assets + 'sass{,/**/*}',
-          config.paths.assets + '/**'])
-    .pipe(gulp.dest(config.paths.public))
+// Copy Nightingale assets
+gulp.task('copy-assets', function (done) {
+  runSequence(
+    'assets-fonts',
+    'assets-images',done);
 })
 
-gulp.task('copy-documentation-assets', function () {
-    return gulp.src(['!' + config.paths.docsAssets + 'sass{,/**/*}',
-          config.paths.docsAssets + '/**'])
-    .pipe(gulp.dest(config.paths.public))
+gulp.task('assets-fonts', function () {
+      gulp.src(config.paths.nightingale + 'assets/fonts/**/*.{ttf,woff,woff2,eot,eof,svg}')
+    .pipe(gulp.dest(config.paths.public + 'fonts'))
+})
+
+gulp.task('assets-images', function () {
+    gulp.src(config.paths.nightingale + 'assets/img/*.{png,jpg,jpeg,svg}')
+    .pipe(gulp.dest(config.paths.public + 'images'))
 })

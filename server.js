@@ -175,9 +175,8 @@ if (useDocumentation) {
 
 // Kick start our server
 app.listen(port)
-console.log('Listening on port ' + port + ' url: https://nhs-prototyping-kit.herokuapp.com:' + port)
+console.log('Listening on port ' + port + ' url: http://localhost:' + port)
 
-// Tell us it's started
 var releaseVersion = packageJson.version
 var description = packageJson.description
 console.log('\n' + description + ' v' + releaseVersion)
