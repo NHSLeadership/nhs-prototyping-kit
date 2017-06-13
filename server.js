@@ -1,11 +1,11 @@
-/* ==========================================================================
- * server.js
- * The main server file. This is where most things are defined.
- * ==========================================================================
- */
-// Define Variables, Scopes and Environments below:
+/* ========================================================================
+   SERVER
+   ======================================================================== */
 
-// Requirements
+/*
+ * The main file we call when deploying, controls everything from variables,
+ * environments and interacts with the express router via middleware.
+ */
 
 require('dotenv').config()
 var path                 = require('path') // NodeJS path module
@@ -16,10 +16,10 @@ var documentationRoutes  = require('./docs/documentation_routes.js') // Document
 var app                  = express()
 var documentationApp     = express()
 var config               = require('./app/config.js') // Main config
-var utils                = require('./lib/utils.js')
+var utils                = require('./lib/utils.js') // Utils
 var packageJson          = require('./package.json')
 
-// Environments
+// Environment
 
 var releaseVersion = packageJson.version
 var env = process.env.NODE_ENV || 'development'
@@ -38,11 +38,6 @@ useAUth = useAuth.toLowerCase()
 
 if (!useDocumentation) promoMode = 'false'
 
-/**==========================================================================
- * Define Routes, Endpoints, Paths below:
- * ==========================================================================
- */
-
 var isSecure = (env === 'production' && useHttps === 'true')
 
 if (isSecure) {
@@ -54,10 +49,8 @@ if (env === 'production' && useAuth === 'true') {
     app.use(utils.basicAuth(username, password))
 }
 
-// Paths setup
 var appViews = [path.join(__dirname, '/app/views/'), path.join(__dirname, '/lib/'), path.join(__dirname, '/lib/template/views/')]
 
-// Setup nunjucks for application
 var nunjucksAppEnv = nunjucks.configure(appViews, {
   autoescape: true,
   express: app,
@@ -65,15 +58,16 @@ var nunjucksAppEnv = nunjucks.configure(appViews, {
   watch: true
 })
 
-// Set views engine
 app.set('view engine', 'html')
 
-// Middleware for serving static sites/files
+/*
+ * Middleware for serving static files, we're serving /assets/fonts rahter than
+ * /public/fonts because nightingale currently has strict rules aroudn this.
+ */
 app.use('/public', express.static(path.join(__dirname, '/public')))
 app.use('/public', express.static(path.join(__dirname, '/node_modules/nightingale/assets')))
 app.use('/assets/fonts', express.static(path.join(__dirname, '/node_modules/nightingale/assets/fonts')))
 
-// Setup documentation application
 
 if (useDocumentation) {
   var documentationViews = [path.join(__dirname, '/docs/views/'), path.join(__dirname, '/lib/'), path.join(__dirname, '/lib/template/views/')]
@@ -85,14 +79,8 @@ if (useDocumentation) {
     watch: true
   })
 
-  // Set views engine
   documentationApp.set('view engine', 'html')
 }
-
-/**==========================================================================
- * Define varliables across views
- * ==========================================================================
- */
 
 
 app.locals.asset_path     = '/public/'
@@ -101,10 +89,6 @@ app.locals.releaseVersion = 'v' + releaseVersion
 app.locals.serviceName    = config.serviceName
 app.locals.promoMode      = promoMode
 
-/**==========================================================================
- * Define SEO and Route niceties and others.s
- * ==========================================================================
- */
 
 if (promoMode === 'true') {
   console.log('Prototype kit running in promo mode')
@@ -137,7 +121,6 @@ if (typeof (routes) !== 'function') {
   app.use('/', routes)
 }
 
-// Strip the .html from the request.
 app.get(/\.html?$/i, function (req, res) {
   var path = req.path
   var parts = path.split('.')
@@ -146,7 +129,6 @@ app.get(/\.html?$/i, function (req, res) {
   res.redirect(path)
 })
 
-// Documentation check
 if (useDocumentation) {
   documentationApp.locals = app.locals
   app.use('/docs', documentationApp)
@@ -166,7 +148,6 @@ app.get(/^\/([^.]+)$/, function (req, res) {
 })
 
 if (useDocumentation) {
-  // Documentation  routes
   documentationApp.get(/^\/([^.]+)$/, function (req, res) {
     if (!utils.matchMdRoutes(req, res)) {
       utils.matchRoutes(req, res)
@@ -174,12 +155,15 @@ if (useDocumentation) {
   })
 }
 
-// Kick start our server
-app.listen(port)
-console.log('Listening on port ' + port + ' url: http://localhost:' + port)
+var server = app.listen(port, function () {
+
+      var host = server.address().address
+
+      console.log('Prototyping Kit listening at http://%s:%s', host, port)
+
+})
 
 var releaseVersion = packageJson.version
 var description = packageJson.description
-console.log('\n' + description + ' v' + releaseVersion)
 
 module.exports = app

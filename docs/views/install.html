@@ -4,27 +4,37 @@
   Getting Started
 {% endblock %}
 
-{% block content %}
+{% block body %}
 
-<div class="o-wrapper">
+  {% block content %}
 
-  <div class="o-layout">
+  <div class="o-wrapper">
 
-    <div class="o-layout__item  u-6/12@md">
-      <h1>Installing the kit</h1>
-      <p>Get up and running with the kit in 30 minutes.</p>
+    <div class="o-layout-middle">
 
-      <h2>Download the kit</h2>
-      <p><a href="https://github.com/NHSLeadership/nhs-prototyping-kit/archive/tkt-00019.zip">Download (zip)</a></p>
+      <main class="o-layout__item u-1/1">
 
-      <h2>Install the kit</h2>
-      <p>Choose from:</p>
-      <ol>
-        <li><a href="/docs/install/introduction">simple install guide</a></li>
-        <li><a href="#0">advanced install guide</a></li>
-      </ol>
+        <div class="o-layout__item  u-6/12@md">
+          <h1>Installing the kit</h1>
+          <p>Get up and running with the kit in 30 minutes.</p>
+
+          <h2>Download the kit</h2>
+          <p><a href="{{ releaseURL }}">Download (zip)</a></p>
+
+          <h2>Install the kit</h2>
+          <p>Choose from:</p>
+          <ol>
+            <li><a href="/docs/install/introduction">simple install guide</a></li>
+            <li><a href="/docs/install/developer-install-instructions">advanced install guide</a></li>
+          </ol>
+        </div>
+
+    </main>
+
     </div>
 
-</div>
+  </div>
+
+  {% endblock %}
 
 {% endblock %}

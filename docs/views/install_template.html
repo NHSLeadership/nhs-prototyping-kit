@@ -4,14 +4,25 @@
   Install - NHS Prototyping Kit
 {% endblock %}
 
-{% block content %}
+{% block body %}
 
-<div class="o-wrapper">
-  <div class="o-layout">
-    <div class="o-layout__item  u-4/12">
-      {{ document | safe }}
+  {% block content %}
+
+  <div class="o-wrapper">
+
+    <div class="o-layout">
+      <main class="o-layout__item u-1/1">
+
+        <div class="o-layout__item  u-7/12">
+          {{ document | safe }}
+        </div>
+
+      </main>
+
     </div>
+
   </div>
-</div>
+
+  {% endblock %}
 
 {% endblock %}

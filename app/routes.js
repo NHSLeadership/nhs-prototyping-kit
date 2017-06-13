@@ -1,9 +1,6 @@
-// routes.js
-// ===========================================================================
-
-// Routes setup
-// ---------------------------------------------------------------------------
-// use Router object
+/* =========================================================================
+    APP ROUTES
+    ======================================================================== */
 
 var express = require('express')
 var router = express.Router()
@@ -11,10 +8,6 @@ var env = process.env.NODE_ENV | 'development'
 var request = require('request')
 var port = process.env.PORT
 
-// Set routes
-// ---------------------------------------------------------------------------
-
-// Home page
 router.get('/', function(req, res) {
     res.render('index')
 });
