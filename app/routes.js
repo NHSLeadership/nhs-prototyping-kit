@@ -19,13 +19,8 @@ router.get('/', function(req, res) {
     res.render('index')
 });
 
-// Nightingale assets rewrite
 router.get('/assets/fonts/:name', function(req,res) {
-  if (env === 'production') {
-    request(req.hostname + '/public/fonts/' + req.params.name).pipe(res);
-  } else {
-    request('http://localhost' + port + '/public/fonts' + req.params.name).pipe(res);
-  }
+  request(req.hostname + '/public/fonts/' + req.params.name).pipe(res);
 });
 
 // CUSTOM ROUTES HERE
