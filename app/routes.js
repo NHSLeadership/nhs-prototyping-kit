@@ -20,8 +20,8 @@ router.get('/', function(req, res) {
 });
 
 router.get('/assets/fonts/:name', function(req,res) {
-  request(req.hostname + '/public/fonts/' + req.params.name).pipe(res);
-});
+  request('//' + req.hostname + '/public/fonts/' + req.params.name).pipe(res);
+})
 
 // CUSTOM ROUTES HERE
 // Page-name
