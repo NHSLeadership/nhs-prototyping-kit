@@ -5,7 +5,6 @@
     "docsAssets" : "docs/assets/",
     "nightingale": "node_modules/nightingale/",
     "nodeModules": "node_modules/",
-    "includes": "includes/",
     "lib": "lib/"
   }
 }

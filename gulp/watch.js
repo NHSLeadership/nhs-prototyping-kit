@@ -1,9 +1,3 @@
-/*
-  watch.js
-  ===========
-  watches sass/js/images
-*/
-
 var gulp = require('gulp')
 var config = require('./config.json')
 

@@ -1,8 +1,3 @@
-// copy.js
-// ============================================================================
-// Copy images and javascript folders into ./public
-//
-
 var gulp = require('gulp')
 var sourcemaps = require('gulp-sourcemaps')
 var runSequence = require('run-sequence')
@@ -18,7 +13,7 @@ gulp.task('copy-assets', function (done) {
 })
 
 gulp.task('assets-fonts', function () {
-      gulp.src(config.paths.nightingale + 'assets/fonts/**/*.{ttf,woff,woff2,eot,eof,svg}')
+      gulp.src(config.paths.nightingale + 'assets/fonts/*.{ttf,woff,woff2,eot,eof,svg}')
     .pipe(gulp.dest(config.paths.public + 'fonts'))
 })
 

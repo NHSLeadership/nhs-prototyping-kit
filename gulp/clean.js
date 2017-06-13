@@ -1,9 +1,3 @@
-/*
-  clean.js
-  ===========
-  removes folders:
-    - public
-*/
 var config = require('./config.json')
 
 var gulp = require('gulp')

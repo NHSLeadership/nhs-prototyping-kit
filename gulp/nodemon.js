@@ -1,9 +1,3 @@
-/*
-  nodemon.js
-  ===========
-  uses nodemon to run a server, watches for javascript and json changes
-*/
-
 var fs = require('fs')
 var path = require('path')
 var gulp = require('gulp')

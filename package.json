@@ -44,7 +44,6 @@
     "gulp-sourcemaps": "^1.6.0",
     "marked": "^0.3.6",
     "nightingale": "https://github.com/NHSLeadership/nightingale.git#tkt-00063",
-    "normalize-scss": "^7.0.0",
     "nunjucks": "^2.5.2",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.2",
