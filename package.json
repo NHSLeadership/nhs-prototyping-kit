@@ -45,6 +45,7 @@
     "marked": "^0.3.6",
     "nightingale": "https://github.com/NHSLeadership/nightingale.git#tkt-00063",
     "nunjucks": "^2.5.2",
+    "request": "^2.81.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.2",
     "standard": "^8.6.0"
