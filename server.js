@@ -71,6 +71,7 @@ app.set('view engine', 'html')
 // Middleware for serving static sites/files
 app.use('/public', express.static(path.join(__dirname, '/public')))
 app.use('/public', express.static(path.join(__dirname, '/node_modules/nightingale/assets')))
+app.use('/assets/fonts', express.static(path.join(__dirname, '/node_modules/nightingale/assets/fonts')))
 
 // Setup documentation application
 

@@ -19,10 +19,6 @@ router.get('/', function(req, res) {
     res.render('index')
 });
 
-router.get('/assets/fonts/:name', function(req,res) {
-  request('https://' + req.hostname + '/public/fonts/' + req.params.name).pipe(res);
-})
-
 // CUSTOM ROUTES HERE
 // Page-name
 // router.get('/page-name', function(req, res) {
