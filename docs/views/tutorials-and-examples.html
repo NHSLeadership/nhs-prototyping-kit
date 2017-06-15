@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  NHS prototype kit
+{% endblock %}
+
+{% block body %}
+
+  {% block content %}
+
+  <main class="o-wrapper">
+
+    <div class="o-layout-middle">
+
+      <h1>Tutorials and examples</h1>
+
+      <div class="o-layout__item u-8/12">
+        <h2>Tutorials</h2>
+        <p>These tutorials are being actively developed. If you have suggestions for improvements, we'd love to hear from you.</p>
+      </div>
+      </div>
+      <div class="o-layout__item u-6/12">
+        <h3>Getting started</h3>
+        <ul>
+          <li><a href="/docs/install/introduction">Simple install guide</a>
+            <ol>
+              <li><a href="/docs/install/requirements">Kit requirements</a></li>
+              <li><a href="/docs/install/install-the-kit">Install the kit</a></li>
+              <li><a href="/docs/install/run-the-kit">Run the kit</a></li>
+            </ol>
+          </li>
+          <li><a href="/docs/install/developer-install-instructions">Advanced install guide</a></li>
+        </ul>
+        </div>
+      </div>
+
+      <div class="o-wrapper-middle">
+        <div class="o-layout__item u-8/12">
+          <h2>Page templates</h2>
+          <p>
+            Use these as the basis for your prototypes.
+            We recommend making copies the files rather than directly editing them.
+          </p>
+        </div>
+      </div>
+
+      <div class="o-wrapper">
+
+        <div class="o-layout__item u-4/12">
+          <h4>Components</h4>
+          <ul>
+            <li>
+              <a href="/docs/examples/elements/grid-layout">
+                Grid layout
+              </a>
+            </li>
+            <li>
+              <a href="/docs/examples/elements/typography">
+                Typography
+              </a>
+            </li>
+            <li>
+              <a href="/docs/examples/elements/forms">
+                Basic form example
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="o-layout__item u-4/12">
+
+          <h4>Entire pages</h4>
+          <ul>
+            <li>
+              <a href="/docs/examples/blank-nhs">
+                Blank
+              </a>
+            </li>
+            <li>
+              <a href="/docs/examples/start-page">
+                Start page
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  {% endblock %}
+
+{% endblock %}

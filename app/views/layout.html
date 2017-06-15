@@ -1,11 +1,14 @@
 {% extends "nhs_template.html" %}
 
-{# I'm not happy with doing it this way. I'll look at fixing it #}
-{% block phase_banner %}
-  {% if phase %}
-    {% include phase %}
-  {% endif %}
+{% block header_class %}
+  c-page-header  c-page-header
 {% endblock %}
+
+{% block header_content %}
+  {% include "includes/header.html" ignore missing %}
+{% endblock %}
+
+{# I'm not happy with doing it this way. I'll look at fixing it #}
 
 {% block footer_support_links %}
   {% include "includes/footer_support_links.html" ignore missing %}

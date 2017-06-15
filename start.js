@@ -8,7 +8,7 @@ var path = require('path')
 var fs = require('fs')
 
 // Check we have a `node_modules` folder otherwise prompt an install
-const nodeModulesExists = fs.existsSync(path.join(__dirname, '/node_modules'))
+const nodeModulesExists = fs.existsSync(path.join(__dirname, './node_modules'))
 if (!nodeModulesExists) {
   console.error('ERROR: Node module folder missing. Try running `npm install`')
   process.exit(0)
@@ -17,7 +17,7 @@ if (!nodeModulesExists) {
 const envExists = fs.existsSync(path.join(__dirname, '/.env'))
 if (!envExists) {
   console.log('Creating template .env file')
-    fs.createReadStream(path.join(__dirname, '/lib/template.env'))
+    fs.createReadStream(path.join(__dirname, './lib/template.env'))
     .pipe(fs.createWriteStream(path.join(__dirname, '/.env')))
 }
 

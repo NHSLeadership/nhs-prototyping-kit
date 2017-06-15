@@ -1,96 +1,126 @@
-/* ==========================================================================
- * #SERVER.JS
- * In this file let's get the install checked and the app up and running.
- * ==========================================================================
+/* ========================================================================
+   SERVER
+   ======================================================================== */
+
+/*
+ * The main file we call when deploying, controls everything from variables,
+ * environments and interacts with the express router via middleware.
  */
 
-/**
- * #BASE
- * ==========================================================================
- */
+require('dotenv').config()
+var path                 = require('path') // NodeJS path module
+var express              = require('express') // Main Web Framework
+var nunjucks             = require('nunjucks') // Templating Engine
+var routes               = require('./app/routes.js') // Application
+var documentationRoutes  = require('./docs/documentation_routes.js') // Documentation
+var app                  = express()
+var documentationApp     = express()
+var config               = require('./app/config.js') // Main config
+var utils                = require('./lib/utils.js') // Utils
+var packageJson          = require('./package.json')
 
-var express     = require('express')
-var path        = require('path')
-var packageJson = require('./package.json')
-var config      = require('./app/config.js') // App's config
-var app         = express() // The designer's app
-var docsApp     = express() // The docs sub app
+// Environment
 
+var releaseVersion = packageJson.version
+var env = process.env.NODE_ENV || 'development'
+var useDocumentation = (config.useDocumentation === 'true')
+var promoMode = process.env.PROMO_MODE || 'false'
+var username = process.env.USERNAME
+var password = process.env.PASSWORD
+var useHttps = process.env.USE_HTTPS || config.useHttps
+var useAuth = process.env.USE_AUTH || config.useAuth
+var port  = process.env.PORT  || config.port
 
-// Set port to 3000
-var port = process.env.PORT || 3000;
-app.set(port)
+env = env.toLowerCase()
+useHttps = useHttps.toLowerCase()
+promoMode = promoMode.toLowerCase()
+useAUth = useAuth.toLowerCase()
 
+if (!useDocumentation) promoMode = 'false'
 
-/**
- * #NUNJUCKS
- * Configure app to use nunjucks templating style to render views.
- * ==========================================================================
- */
+var isSecure = (env === 'production' && useHttps === 'true')
 
-// Firstly the requires
-var nunjucks = require('nunjucks')
+if (isSecure) {
+  app.use(utils.forceHttps)
+  app.set('trust proxy',1)
+}
 
-// Location of views and routes
-var appViews = './app/views/'
-var appRoutes = './app/routes'
-var nhsViews = './lib/template/views/'
-var docsAppViews = './docs/views/'
-var docsAppRoutes = './docs/routes'
+if (env === 'production' && useAuth === 'true') {
+    app.use(utils.basicAuth(username, password))
+}
 
-// Configure nunjucks templating engine
+var appViews = [path.join(__dirname, '/app/views/'), path.join(__dirname, '/lib/'), path.join(__dirname, '/lib/template/views/')]
 
- var nunjucksAppEnv = nunjucks.configure([appViews, nhsViews], {
+var nunjucksAppEnv = nunjucks.configure(appViews, {
   autoescape: true,
   express: app,
   noCache: true,
   watch: true
 })
 
-var nunjucksDocsAppEnv = nunjucks.configure([docsAppViews, nhsViews], {
-  autoescape: true,
-  express: docsApp,
-  noCache: true,
-  watch: true
-})
-
-// Nunjucks filters
-/**
-utils.addNunjucksFilters(nunjucksAppEnv)
-utils.addNunjucksFilters(nunjucksDocsAppEnv)
-*/
-
-// Set views engine
 app.set('view engine', 'html')
-docsApp.set('view engine', 'html')
 
-/**
- * #ROUTES
- * ==========================================================================
+/*
+ * Middleware for serving static files, we're serving /assets/fonts rahter than
+ * /public/fonts because nightingale currently has strict rules aroudn this.
  */
+app.use('/public', express.static(path.join(__dirname, '/public')))
+app.use('/public', express.static(path.join(__dirname, '/node_modules/nightingale/assets')))
+app.use('/assets/fonts', express.static(path.join(__dirname, '/node_modules/nightingale/assets/fonts')))
 
-// Import routes
-app.use(require(appRoutes))
-app.use('./public', express.static(path.join(__dirname, './public')))
 
-// Mount the sub-app
-app.use('/docs', docsApp)
-// Docs app under the /docs namespace
-//docsApp.use('/', docsAppRoutes)
-docsApp.use(require(docsAppRoutes))
+if (useDocumentation) {
+  var documentationViews = [path.join(__dirname, '/docs/views/'), path.join(__dirname, '/lib/'), path.join(__dirname, '/lib/template/views/')]
 
-// Remove Indexing
-app.use(function (req, res, next) {
-  res.setHeader('X-Robots-Tag', 'noindex')
-  next()
-})
+  var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, {
+    autoescape: true,
+    express: documentationApp,
+    noCache: true,
+    watch: true
+  })
 
-app.get('/robots.txt', function (req, res) {
-  res.type('text/plain')
-  res.send('User-agent: * \nDisallow: /')
-})
+  documentationApp.set('view engine', 'html')
+}
 
-// Strip the .html from the request.
+
+app.locals.asset_path     = '/public/'
+app.locals.cookieTest     = config.cookieText
+app.locals.releaseVersion = 'v' + releaseVersion
+app.locals.serviceName    = config.serviceName
+app.locals.promoMode      = promoMode
+
+
+if (promoMode === 'true') {
+  console.log('Prototype kit running in promo mode')
+
+  app.get('/', function (req, res) {
+    res.redirect('/docs')
+  })
+
+  app.get('/robots.txt', function (req, res) {
+    res.type('text/plain')
+    res.send('User-agent: *\nAllow: /')
+  })
+} else {
+  app.use(function (req, res, next) {
+    res.setHeader('X-Robots-Tag', 'noindex')
+    next()
+  })
+
+  app.get('/robots.txt', function (req, res) {
+    res.type('text/plain')
+    res.send('User-agent: *\nDisallow: /')
+  })
+}
+
+if (typeof (routes) !== 'function') {
+  console.log(routes.bind)
+  console.log('Warning: the use of bind in routes is deprecated - please check the prototype kit documentation for writing routes.')
+  routes.bind(app)
+} else {
+  app.use('/', routes)
+}
+
 app.get(/\.html?$/i, function (req, res) {
   var path = req.path
   var parts = path.split('.')
@@ -99,26 +129,41 @@ app.get(/\.html?$/i, function (req, res) {
   res.redirect(path)
 })
 
+if (useDocumentation) {
+  documentationApp.locals = app.locals
+  app.use('/docs', documentationApp)
+  documentationApp.use('/', documentationRoutes)
+}
 
-/**
- * #VARIABLES
- */
+app.get(/\.html?$/i, function (req, res) {
+  var path = req.path
+  var parts = path.split('.')
+  parts.pop()
+  path = parts.join('.')
+  res.redirect(path)
+})
 
-app.locals.asset_path = './public/'
-docsApp.locals.asset_path = app.locals.asset_path // Documentation app locals copy app locals
-// In-app variables
-app.locals.serviceName = config.serviceName
-app.locals.prototypeVersion = config.prototypeVersion
-app.locals.releaseVersion = packageJson.version
-/**
- * #START
- * ==========================================================================
- */
+app.get(/^\/([^.]+)$/, function (req, res) {
+  utils.matchRoutes(req, res)
+})
 
-// Kick start our server
-app.listen(port);
-// Tell us it's started
+if (useDocumentation) {
+  documentationApp.get(/^\/([^.]+)$/, function (req, res) {
+    if (!utils.matchMdRoutes(req, res)) {
+      utils.matchRoutes(req, res)
+    }
+  })
+}
+
+var server = app.listen(port, function () {
+
+      var host = server.address().address
+
+      console.log('Prototyping Kit listening at http://%s:%s', host, port)
+
+})
+
 var releaseVersion = packageJson.version
 var description = packageJson.description
-console.log('\n' + description + ' v' + releaseVersion)
-console.log('Server started at : http://localhost:' + port)
+
+module.exports = app

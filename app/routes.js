@@ -1,20 +1,16 @@
-// routes.js
-// ===========================================================================
+/* =========================================================================
+    APP ROUTES
+    ======================================================================== */
 
-// Routes setup
-// ---------------------------------------------------------------------------
-// use Router object
 var express = require('express')
 var router = express.Router()
+var env = process.env.NODE_ENV | 'development'
+var request = require('request')
+var port = process.env.PORT
 
-// Set routes
-// ---------------------------------------------------------------------------
-
-// Home page
 router.get('/', function(req, res) {
     res.render('index')
 });
-
 
 // CUSTOM ROUTES HERE
 // Page-name
@@ -22,9 +18,6 @@ router.get('/', function(req, res) {
 //     res.render('page-name')
 // });
 
-
-// Static assets
-router.use(express.static('./public'))
 
 // Export routes
 // ---------------------------------------------------------------------------

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Install - NHS Prototyping Kit
+{% endblock %}
+
+{% block body %}
+
+  {% block content %}
+
+  <div class="o-wrapper">
+
+    <div class="o-layout">
+      <main class="o-layout__item u-1/1">
+
+        <div class="o-layout__item  u-7/12">
+          {{ document | safe }}
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  {% endblock %}
+
+{% endblock %}
