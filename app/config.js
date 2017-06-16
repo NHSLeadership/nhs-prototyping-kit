@@ -32,6 +32,15 @@ module.exports = {
   graphLowerExperienceStaff: 'Other staff',
   graphHigherRegionOrgs: '5',
   graphHigherNationalOrgs: '51',
+  leadPerspectiveLowScore: '30',
+  leadPerspectiveDevScore: '60',
+  leadPerspectiveGoodScore: '10',
+  seniorLeadPerspectiveLowScore: '72',
+  seniorLeadPerspectiveDevScore: '18',
+  seniorLeadPerspectiveGoodScore: '10',
+  otherStaffPerspectiveLowScore: '75',
+  otherStaffPerspectiveDevScore: '20',
+  otherStaffPerspectiveGoodScore: '5',
 
   // Other variables
   // (use {{releaseVersion}} for the prototyping kit version)

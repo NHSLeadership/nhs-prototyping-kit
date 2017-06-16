@@ -51,37 +51,84 @@
             </div>
           </div>
         {% endblock %}
-
+        <br/><br/>
         {% block graph_section %}
         <div class="o-layout">
           <div class="o-layout__item  u-3/12@lg">
             <p></p>
+            <p>&nbsp;</p>
             <p>HR / TM / OD Lead perspective</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
             <p>Senior Leaders perspective</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
             <p>Other staff perspective</p>
           </div>
           <div class="o-layout__item  u-3/12@lg">
             <p>Low</p>
-            <p class="report-description-text">30%</p>
-            <p class="report-description-text">72%</p>
-            <p class="report-description-text">75%</p>
+            <p>&nbsp;</p>
+            <svg>
+              <circle cx="{{leadPerspectiveLowScore/2}}" cy="{{leadPerspectiveLowScore/2}}" r="{{leadPerspectiveLowScore/2}}" fill="red" />
+              Sorry, your browser does not support inline SVG.
+              <text x="175" y="20" text-anchor="middle" stroke="#768692">{{leadPerspectiveLowScore}}%</text>
+            </svg>
+            <svg>
+              <circle cx="{{seniorLeadPerspectiveLowScore/2}}" cy="{{seniorLeadPerspectiveLowScore/2}}" r="{{seniorLeadPerspectiveLowScore/2}}" fill="#CC6600" />
+              Sorry, your browser does not support inline SVG.
+              <text x="175" y="30" text-anchor="middle" stroke="#768692">{{seniorLeadPerspectiveLowScore}}%</text>
+            </svg>
+            <svg>
+              <circle cx="{{otherStaffPerspectiveLowScore/2}}" cy="{{otherStaffPerspectiveLowScore/2}}" r="{{otherStaffPerspectiveLowScore/2}}" fill="#00A498" />
+              Sorry, your browser does not support inline SVG.
+              <text x="175" y="40" text-anchor="middle" stroke="#768692">{{otherStaffPerspectiveLowScore}}%</text>
+            </svg>
           </div>
 
           <div class="o-layout__item  u-3/12@lg">
             <p>Developing</p>
-            <p class="report-description-text">60%</p>
-            <p class="report-description-text">18%</p>
-            <p class="report-description-text">20%</p>
+            <p>&nbsp;</p>
+            <svg>
+              <circle cx="{{leadPerspectiveDevScore/2}}" cy="{{leadPerspectiveDevScore/2}}" r="{{leadPerspectiveDevScore/2}}" fill="red" />
+              Sorry, your browser does not support inline SVG.
+              <text x="175" y="30" text-anchor="middle" stroke="#768692">{{leadPerspectiveDevScore}}%</text>
+            </svg>
+            <svg>
+              <circle cx="{{seniorLeadPerspectiveDevScore/2}}" cy="{{seniorLeadPerspectiveDevScore/2}}" r="{{seniorLeadPerspectiveDevScore/2}}" fill="#CC6600" />
+              Sorry, your browser does not support inline SVG.
+              <text x="175" y="16" text-anchor="middle" stroke="#768692">{{seniorLeadPerspectiveDevScore}}%</text>
+            </svg>
+            <svg>
+              <circle cx="{{otherStaffPerspectiveDevScore/2}}" cy="{{otherStaffPerspectiveDevScore/2}}" r="{{otherStaffPerspectiveDevScore/2}}" fill="#00A498" />
+              Sorry, your browser does not support inline SVG.
+              <text x="175" y="16" text-anchor="middle" stroke="#768692">{{otherStaffPerspectiveDevScore}}%</text>
+            </svg>
           </div>
 
           <div class="o-layout__item  u-3/12@lg">
             <p>Good</p>
-            <p class="report-description-text">10%</p>
-            <p class="report-description-text">10%</p>
-            <p class="report-description-text">5%</p>
+            <p>&nbsp;</p>
+            <svg>
+              <circle cx="{{leadPerspectiveGoodScore/2}}" cy="{{leadPerspectiveGoodScore/2}}" r="{{leadPerspectiveGoodScore/2}}" fill="red" />
+              Sorry, your browser does not support inline SVG.
+              <text x="175" y="18" text-anchor="middle" stroke="#768692">{{leadPerspectiveGoodScore}}%</text>
+            </svg>
+            <svg>
+              <circle cx="{{seniorLeadPerspectiveGoodScore/2}}" cy="{{seniorLeadPerspectiveGoodScore/2}}" r="{{seniorLeadPerspectiveGoodScore/2}}" fill="#CC6600" />
+              Sorry, your browser does not support inline SVG.
+              <text x="175" y="15" text-anchor="middle" stroke="#768692">{{seniorLeadPerspectiveGoodScore}}%</text>
+            </svg>
+            <svg>
+              <circle cx="{{otherStaffPerspectiveGoodScore/2}}" cy="{{otherStaffPerspectiveGoodScore/2}}" r="{{otherStaffPerspectiveGoodScore/2}}" fill="#00A498" />
+              Sorry, your browser does not support inline SVG.
+              <text x="175" y="15" text-anchor="middle" stroke="#768692">{{otherStaffPerspectiveGoodScore}}%</text>
+            </svg>
           </div>
+
         </div>
+
         {% endblock %}
+        <br/><br/>
 
       </div>
     {% endblock %}

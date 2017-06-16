@@ -134,7 +134,15 @@ app.locals.releaseVersion = packageJson.version
   app.locals.graphLowerExperienceStaff = config.graphLowerExperienceStaff
   app.locals.graphHigherRegionOrgs = config.graphHigherRegionOrgs
   app.locals.graphHigherNationalOrgs = config.graphHigherNationalOrgs
-
+  app.locals.leadPerspectiveLowScore = config.leadPerspectiveLowScore
+  app.locals.leadPerspectiveDevScore = config.leadPerspectiveDevScore
+  app.locals.leadPerspectiveGoodScore = config.leadPerspectiveGoodScore
+  app.locals.seniorLeadPerspectiveLowScore = config.seniorLeadPerspectiveLowScore
+  app.locals.seniorLeadPerspectiveDevScore = config.seniorLeadPerspectiveDevScore
+  app.locals.seniorLeadPerspectiveGoodScore = config.seniorLeadPerspectiveGoodScore
+  app.locals.otherStaffPerspectiveLowScore = config.otherStaffPerspectiveLowScore
+  app.locals.otherStaffPerspectiveDevScore = config.otherStaffPerspectiveDevScore
+  app.locals.otherStaffPerspectiveGoodScore = config.otherStaffPerspectiveGoodScore
 
 
 /**
