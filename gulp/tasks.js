@@ -14,7 +14,7 @@ gulp.task('generate-assets', function (done) {
                 'copy-assets', done)
 })
 
-gulp.task('watch', function (done) {
+gulp.task('watch', function () {
   runSequence('watch-sass',
-               'watch-assets', done)
+               'watch-assets')
 })
