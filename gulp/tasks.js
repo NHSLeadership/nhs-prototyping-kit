@@ -9,12 +9,13 @@ gulp.task('default', function (done) {
 
 gulp.task('generate-assets', function (done) {
   runSequence('clean',
-                'sass',
+                'sass-nightingale',
+                'sass-app',
                 'sass-documentation',
                 'copy-assets', done)
 })
 
-gulp.task('watch', function (done) {
+gulp.task('watch', function () {
   runSequence('watch-sass',
-               'watch-assets', done)
+               'watch-assets')
 })

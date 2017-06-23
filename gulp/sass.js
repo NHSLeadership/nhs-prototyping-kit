@@ -4,7 +4,7 @@ var sourcemaps = require('gulp-sourcemaps')
 
 var config = require('./config.json')
 
-gulp.task('sass', function () {
+gulp.task('sass-nightingale', function () {
   return gulp.src(config.paths.nightingale + '*.{css,scss}')
   .pipe(sourcemaps.init())
   .pipe(sass({
@@ -15,8 +15,18 @@ gulp.task('sass', function () {
   .pipe(gulp.dest(config.paths.public + '/stylesheets/'))
 })
 
+gulp.task('sass-app', function () {
+  return gulp.src(config.paths.assets + 'sass/*.{css,sass,scss}')
+  .pipe(sourcemaps.init())
+  .pipe(sass({
+    outputStyle: 'expanded'
+  }).on('error', sass.logError))
+  .pipe(sourcemaps.write())
+  .pipe(gulp.dest(config.paths.public + '/stylesheets/'))
+})
+
 gulp.task('sass-documentation', function () {
-  return gulp.src(config.paths.nightingale + '*.{css,scss}')
+  return gulp.src(config.paths.nightingale + '*.{css,sass,scss}')
   .pipe(sourcemaps.init())
   .pipe(sass({outputStyle: 'expanded',
     includePaths: "./node_modules"
