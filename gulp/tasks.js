@@ -9,7 +9,8 @@ gulp.task('default', function (done) {
 
 gulp.task('generate-assets', function (done) {
   runSequence('clean',
-                'sass',
+                'sass-nightingale',
+                'sass-app',
                 'sass-documentation',
                 'copy-assets', done)
 })
