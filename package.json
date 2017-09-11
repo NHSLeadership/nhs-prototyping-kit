@@ -9,7 +9,9 @@
   "main": "start.js",
   "scripts": {
     "start": "node start.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -30,12 +32,14 @@
   "homepage": "https://github.com/NHSLeadership/nhs-prototyping-kit#readme",
   "dependencies": {
     "cross-spawn": "^5.0.0",
-    "express": "4.13.3",
+    "express": "4.15.3",
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.1.0",
     "nunjucks": "^2.5.2",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.2",
-    "chokidar": "^1.6.1"
-  }
+    "chokidar": "^1.6.1",
+    "snyk": "^1.40.2"
+  },
+  "snyk": true
 }
