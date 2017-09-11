@@ -12,13 +12,15 @@ We recommend keeping all your prototypes in one folder called `projects`.
 
 Create a folder called `projects` in your home folder. You can open your home folder by opening a new finder window, and selecting `go > home` from the top menu.
 
+![Screenshot of a 'projects' folder in the mac home folder](/public/images/docs/mac-home-folder-projects.png)
+
 #### Windows users
 
 Create a folder called `projects` in your `Documents` or `My Documents` folder.
 
 ### Unzip the kit
 
-Unzip the kit you downloaded - you should end up with a folder called `nhs_prototype_kit-3.0.0`
+Unzip the kit you downloaded - you should end up with a folder called `nhs-prototyping-kit-3.0.0`
 
 ### Rename the kit
 
@@ -86,4 +88,4 @@ npm install
 The install may take up to a minute. Whilst installing it may `WARN` about some items - this is ok. As long as there are no `ERROR`s you can continue.
 
 
-<a href="run-the-kit.md" class="c-btn c-btn--submit">Next (run the kit)</a>
+<a href="run-the-kit" class="c-btn c-btn--submit">Next (run the kit)</a>

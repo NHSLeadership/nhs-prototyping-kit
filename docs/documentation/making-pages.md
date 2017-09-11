@@ -39,4 +39,3 @@ The resulting HTML page will be:
     </html>
 
 You can read more in the [Nunjucks documentation](https://mozilla.github.io/nunjucks/templating.html).
-

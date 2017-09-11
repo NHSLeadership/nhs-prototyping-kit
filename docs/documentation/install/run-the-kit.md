@@ -24,6 +24,8 @@ In your web browser, visit <a href="http://localhost:3000" target="_blank">http:
 
 You should see the prototype welcome page.
 
+![Screenshot of the prototype kit homepage](/public/images/docs/prototype-kit-homepage.png)
+
 ## Quitting the kit
 
 It’s fine to leave the kit running for days or while your computer is asleep.
