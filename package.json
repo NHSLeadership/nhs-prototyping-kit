@@ -9,7 +9,7 @@
   "main": "start.js",
   "scripts": {
     "start": "node start.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "snyk test",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },
@@ -31,14 +31,14 @@
   },
   "homepage": "https://github.com/NHSLeadership/nhs-prototyping-kit#readme",
   "dependencies": {
+    "chokidar": "^1.6.1",
     "cross-spawn": "^5.0.0",
     "express": "4.15.3",
     "gulp": "^3.9.1",
-    "gulp-nodemon": "^2.1.0",
+    "gulp-nodemon": "^2.2.1",
     "nunjucks": "^2.5.2",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.2",
-    "chokidar": "^1.6.1",
     "snyk": "^1.40.2"
   },
   "snyk": true

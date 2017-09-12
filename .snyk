@@ -5,18 +5,30 @@ ignore: {}
 patch:
   'npm:minimatch:20160620':
     - gulp > vinyl-fs > glob-stream > minimatch:
-        patched: '2017-09-11T11:03:42.103Z'
+        patched: '2017-09-12T08:45:14.656Z'
     - gulp-nodemon > gulp > vinyl-fs > glob-stream > minimatch:
-        patched: '2017-09-11T11:03:42.103Z'
+        patched: '2017-09-12T08:45:14.656Z'
     - gulp > vinyl-fs > glob-stream > glob > minimatch:
         patched: '2017-09-11T11:03:42.103Z'
+      gulp-nodemon > gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2017-09-12T08:45:14.656Z'
     - gulp-nodemon > gulp > vinyl-fs > glob-stream > glob > minimatch:
         patched: '2017-09-11T11:03:42.103Z'
+      gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2017-09-12T08:45:14.656Z'
     - gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
         patched: '2017-09-11T11:03:42.103Z'
+      gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2017-09-12T08:45:14.656Z'
     - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
         patched: '2017-09-11T11:03:42.103Z'
+      gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2017-09-12T08:45:14.656Z'
     - gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
         patched: '2017-09-11T11:03:42.103Z'
+      gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2017-09-12T08:45:14.656Z'
     - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
         patched: '2017-09-11T11:03:42.103Z'
+      gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2017-09-12T08:45:14.656Z'
