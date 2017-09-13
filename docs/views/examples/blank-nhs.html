@@ -5,10 +5,20 @@
 {% endblock %}
 
 {% block body %}
-  {% block content %}
+  {% block after_header %}
+  <div class="o-wrapper">
+    <nav class="c-breadcrumb u-margin-top-tiny">
+      <ol class="c-breadcrumb__list">
+      </ol>
+    </nav>
+  </div>
+  {% endblock %}
 
-  <main class="o-layout__item u-1/1">
-  </main>
+  {% block content %}
+  <div class="o-wrapper c-page-main">
+    <main class="o-layout o-layout--wide">
+    </main>
+  </div>
 
   {% endblock %}
 

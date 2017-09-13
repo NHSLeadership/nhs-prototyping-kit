@@ -7,4 +7,8 @@
 *
 */
 
-// html{color:red;}
+
+$asset-path: '/public/';
+$image-path: '/public/images/';
+
+@import 'nightingale/main';

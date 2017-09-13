@@ -8,19 +8,13 @@ var config = require('./config.json')
 // Copy Nightingale assets
 gulp.task('copy-assets', function (done) {
   runSequence(
-    'nightingale-assets-fonts',
     'nightingale-assets-images',
     'app-assets-javascript',
     'app-assets-images',done);
 })
 
-gulp.task('nightingale-assets-fonts', function () {
-      gulp.src(config.paths.nightingale + 'assets/fonts/*.{ttf,woff,woff2,eot,eof,svg}')
-    .pipe(gulp.dest(config.paths.public + 'fonts'))
-})
-
 gulp.task('nightingale-assets-images', function () {
-    gulp.src(config.paths.nightingale + 'assets/img/*.{png,jpg,jpeg,svg}')
+    gulp.src(config.paths.nightingale + 'assets/img/**/*.{png,jpg,jpeg,svg}')
     .pipe(gulp.dest(config.paths.public + 'images'))
 })
 

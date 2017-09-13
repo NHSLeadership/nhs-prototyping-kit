@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Blank page
+{% endblock %}
+
+{% block body %}
+  {% block after_header %}
+  <div class="o-wrapper">
+    <nav class="c-breadcrumb u-margin-top-tiny">
+      <ol class="c-breadcrumb__list">
+        <li class="c-breadcrumb__item"><a href="/docs" class="c-breadcrumb__link c-sprite c-sprite--home">NHS Prototyping Kit</a></li>
+        <li class="c-breadcrumb__item"><a href="/docs/tutorials-and-examples"
+            class="c-breadcrumb__link is-current">Tutorials &amp; examples</a></li>
+      </ol>
+    </nav>
+  </div>
+  {% endblock %}
+
+  {% block content %}
+  <div class="o-wrapper c-page-main">
+    <main class="o-layout o-layout--wide">
+     <div class="o-layout__item u-8/12@lg">
+      <h3 class="u-margin-bottom-small">Option</h3>
+      <p>Candy canes chocolate bar apple pie macaroon cookie ice cream. Jelly-o
+      pudding marzipan topping cake caramels. Gummies chocolate cake jelly cookie
+      lollipop cheesecake cake macaroon oat cake. Ice cream cookie jelly beans
+      dessert candy tootsie roll tootsie roll croissant. Gummies icing jelly cake
+      icing fruitcake biscuit sweet roll dragée. Bonbon marshmallow carrot cake
+      caramels. Wafer carrot cake cake candy canes candy canes.</p>
+      <form>
+        <ul class="c-form-list"
+          <strong class="c-form-label">Cotton candy donut candy?</strong>
+
+          <label class="c-form-checkbox  c-form-checkbox--radio">
+            <input type="radio" class="c-form-checkbox__input" checked name="options" />
+            <span class="c-form-checkbox__faux"></span>
+            Sugar
+          </label>
+
+          <label class="c-form-checkbox  c-form-checkbox--radio">
+            <input type="radio" class="c-form-checkbox__input" name="options" />
+            <span class="c-form-checkbox__faux"></span>
+            Plum
+          </label>
+
+          <label class="c-form-checkbox  c-form-checkbox--radio">
+            <input type="radio" class="c-form-checkbox__input" name="options" />
+            <span class="c-form-checkbox__faux"></span>
+            Caramels
+          </label>
+          </li>
+        </ul>
+        <p><a href="#0" class="c-btn
+        c-btn c-btn--submit">Submit Question</a></p>
+      </form>
+     </div>
+    </main>
+  </div>
+
+  {% endblock %}
+
+{% endblock %}
+
+

@@ -3,6 +3,8 @@
 
 Quickly create HTML prototypes of NHS services using the Nightingale framework
 
+[![Known Vulnerabilities](https://snyk.io/test/github/nhsleadership/nhs-prototyping-kit/badge.svg)](https://snyk.io/test/github/nhsleadership/nhs-prototyping-kit)
+
 # Introduction
 The [NHS prototype kit](https://github.com/NHSLeadership/nhs-prototyping-kit/) provides a simple way to make interactive prototypes that look like NHS service pages (using the [Nightingale framework](https://github.com/NHSLeadership/nightingale)). These prototypes can be used to show ideas to people you work with, and to do user research.
 

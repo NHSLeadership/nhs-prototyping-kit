@@ -3,11 +3,14 @@
 {% block body %}
 
   {% block header_class %}
-    c-page-header c-page-header
+    c-page-header u-margin-bottom-tiny
   {% endblock %}
 
   {% block header_content %}
     {% include "includes/header.html" %}
+  {% endblock %}
+
+  {% block after_header %}
   {% endblock %}
 
   {% block content %}{% endblock %}
