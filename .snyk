@@ -1,4 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+
 version: v1.10.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
@@ -46,3 +47,4 @@ patch:
         patched: '2017-12-16T23:12:03.199Z'
     - gulp-watch > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
         patched: '2017-12-16T23:12:03.199Z'
+        
