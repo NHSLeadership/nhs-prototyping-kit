@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.1
+version: v1.10.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   'npm:shelljs:20140723':
@@ -28,3 +28,21 @@ patch:
         patched: '2017-09-12T11:06:00.107Z'
     - gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
         patched: '2017-09-12T11:06:00.107Z'
+  'npm:debug:20170905':
+    - gulp-nodemon > nodemon > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
+        patched: '2017-12-16T23:12:03.199Z'
+    - gulp-watch > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
+        patched: '2017-12-16T23:12:03.199Z'
+    - chokidar > fsevents > node-pre-gyp > tar-pack > debug:
+        patched: '2017-12-16T23:12:03.199Z'
+    - nunjucks > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
+        patched: '2017-12-16T23:12:03.199Z'
+  'npm:tough-cookie:20170905':
+    - nunjucks > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2017-12-16T23:12:03.199Z'
+    - gulp-nodemon > nodemon > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2017-12-16T23:12:03.199Z'
+    - chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2017-12-16T23:12:03.199Z'
+    - gulp-watch > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2017-12-16T23:12:03.199Z'
