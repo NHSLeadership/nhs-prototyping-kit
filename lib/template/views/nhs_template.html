@@ -1,0 +1,87 @@
+{% block top_of_the_page %}{% endblock %}
+
+<!DOCTYPE html>
+<html lang="{{ html_lang|default('en') }}" id="jsPage" class="no-js">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+
+    <link rel="stylesheet" href="{{ asset_path }}stylesheets/main.css" />
+    <link rel="stylesheet" href="{{ asset_path }}stylesheets/trumps.css" />
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <script>
+      (function(){
+        var page = document.getElementById('jsPage');
+        page.classList.remove('no-js');
+      }());
+    </script>
+
+
+    <style>
+      h2[id]::before,
+      h3[id]::before,
+      h4[id]::before,
+      h5[id]::before,
+      h6[id]::before {
+        content: "#";
+        display: inline-block;
+        text-align: center;
+        width: 1em;
+        margin-left: -1em;
+        opacity: 0;
+      }
+      h2[id]:hover::before,
+      h3[id]:hover::before,
+      h4[id]:hover::before,
+      h5[id]:hover::before,
+      h6[id]:hover::before,
+      h2[id]:target::before,
+      h3[id]:target::before,
+      h4[id]:target::before,
+      h5[id]:target::before,
+      h6[id]:target::before {
+        opacity: 0.25;
+      }
+
+      .c-page-main {
+        min-height: calc(100vh - 301px);
+      }
+    </style>
+
+    {% block head_end %}{% endblock %}
+
+</head>
+  <body class="{% block body_classes %}{% endblock %}">
+
+    {% block body_start %}{% endblock %}
+
+    {% block ribbon %}{% endblock %}
+
+    <header class="{% block header_class %}{% endblock %}" id="jsPageHeader">
+      <div class="o-wrapper  c-page-header__inner">
+        {% block header_content %}{% endblock %}
+      </div>
+    </header>
+
+    {% block after_header %}{% endblock %}
+
+    {% block content %}{% endblock %}
+
+    <footer class="c-page-footer">
+      {% block footer_top %}{% endblock %}
+      <div class="o-wrapper">
+        <div class="o-layout">
+          {% block footer_support_links %}{% endblock %}
+        </div>
+      </div>
+    </footer>
+
+    {% block body_end %}{% endblock %}
+
+    <script type="text/javascript" src="{{ asset_path }}javascript/trumps.js"></script>
+
+  </body>
+</html>

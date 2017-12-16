@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Getting Started
+{% endblock %}
+
+{% block body %}
+  {% block after_header %}
+  <div class="o-wrapper">
+    <nav class="c-breadcrumb u-margin-top-tiny">
+      <ol class="c-breadcrumb__list">
+        <li class="c-breadcrumb__item"><a href="/docs"
+            class="c-breadcrumb__link c-sprite c-sprite--home">NHS Prototyping Kit</a></li>
+        <li class="c-breadcrumb__item"><a href="/docs/install" class="c-breadcrumb__link is-current">Install</a></li>
+      </ol>
+    </nav>
+  </div>
+  {% endblock %}
+
+  {% block content %}
+  <div class="o-wrapper c-page-main">
+
+    <main class="o-layout o-layout--wide">
+      <div class="o-layout__item  u-8/12@lg">
+        <h1>Installing the kit</h1>
+        <p>Get up and running with the kit in 30 minutes.</p>
+
+        <h3 class="u-margin-bottom-small">Download the kit</h3>
+        <p><a href="{{ releaseURL }}">Download (zip)</a></p>
+
+        <h3 class="u-margin-bottom-small">Install the kit</h3>
+        <p>Choose from:</p>
+        <ol>
+          <li><a href="/docs/install/introduction">simple install guide</a></li>
+          <li><a href="/docs/install/developer-install-instructions">advanced install guide</a></li>
+        </ol>
+      </div>
+
+    </main>
+
+  </div>
+
+  {% endblock %}
+
+{% endblock %}

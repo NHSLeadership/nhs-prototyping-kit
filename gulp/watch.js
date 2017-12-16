@@ -1,20 +1,18 @@
-// watch.js
-// ============================================================================
-// chokidar: watch for ./app changes and clear cache, reload from orig
-
-// requires
 var gulp = require('gulp')
-var chokidar = require('chokidar')
-// Start watch on ./app
-var watcher = chokidar.watch('./app')
+var watch = require('gulp-watch');
 
-gulp.task('watch', function () {
-    watcher.on('ready', function() {
-        watcher.on('all', function() {
-                console.log("Clearing /dist/ module cache from server")
-                Object.keys(require.cache).forEach(function(id) {
-                    if (/[\/\\]app[\/\\]/.test(id)) delete require.cache[id]
-                })
-            })
-        })
-    })
+var config = require('./config.json')
+
+gulp.task('watch-sass', function () {
+  return gulp.watch(
+      config.paths.assets + 'sass/**',
+  {cwd: './'}, ['sass-app'])
+})
+
+gulp.task('watch-assets', function () {
+  return gulp.watch([
+      config.paths.assets + 'images/**',
+      config.paths.assets + 'javascript/**'
+  ],
+    {cwd: './'}, ['copy-assets'])
+})

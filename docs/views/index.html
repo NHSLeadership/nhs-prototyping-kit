@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  NHS Prototyping Kit
+{% endblock %}
+
+{% block body %}
+  {% block after_header %}
+  <div class="o-wrapper">
+    <nav class="c-breadcrumb u-margin-top-tiny">
+      <ol class="c-breadcrumb__list">
+      </ol>
+    </nav>
+  </div>
+  {% endblock %}
+
+  {% block content %}
+
+  <div class="o-wrapper c-page-main">
+
+    <main class="o-layout o-layout--wide">
+
+      <div class="o-layout__item u-11/12@lg">
+
+        <h1 class="u-margin-bottom-large">NHS Prototype Kit</h1>
+        <p>Create rapid HTML prototypes of NHS patterns.</p>
+
+        <div class="o-layout o-layout--wide">
+
+          <div class="o-layout__item u-5/12@lg">
+            <h3 class="u-margin-bottom-tiny"><a
+                href="/docs/install">Install</a></h3>
+            <p>Download and Install Instructions</p>
+          </div>
+
+          <div class="o-layout__item u-5/12@sm">
+            <h3 class="u-margin-bottom-tiny"><a href="/docs/tutorials-and-examples">Tutorials &
+                Examples</a></h3>
+            <p>Turorials, examples and layouts.</p>
+          </div>
+
+          <div class="o-layout__item u-5/12@sm">
+            <h3 class="u-margin-bottom-tiny"><a
+                href="/docs/about">About</a></h3>
+            <p>About the kit, principles, privacy.</p>
+          </div>
+
+          <div class="o-layout__item u-5/12@sm">
+            <h3 class="u-margin-bottom-tiny"><a
+                href="https://github.com/NHSLeadership/nhs-prototyping-kit">GitHub</a></h3>
+            <p>Source code, contributing and bugs</p>
+          </div>
+
+        </div>
+
+    </main>
+
+  </div>
+
+  {% endblock %}
+
+{% endblock %}

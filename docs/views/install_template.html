@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Install - NHS Prototyping Kit
+{% endblock %}
+
+{% block body %}
+  {% block after_header %}
+  <div class="o-wrapper">
+    <nav class="c-breadcrumb u-margin-top-tiny">
+      <ol class="c-breadcrumb__list">
+        <li class="c-breadcrumb__item"><a href="/docs" class="c-breadcrumb__link c-sprite c-sprite--home">NHS Prototyping Kit</a></li>
+        <li class="c-breadcrumb__item"><a href="/docs/install" class="c-breadcrumb__link">Install</a></li>
+        <li class="c-breadcrumb__item"><a href="/docs/install/introduction" class="c-breadcrumb__link is-current">Introduction</a></li>
+      </ol>
+    </nav>
+  </div>
+  {% endblock %}
+
+  {% block content %}
+
+  <div class="o-wrapper">
+
+    <div class="o-layout o-layout--wide">
+      <main class="o-layout__item u-11/12@lg">
+
+        <div class="o-layout o-layout--wide">
+
+          <div class="o-layout__item  u-9/12">
+            {{ document | safe }}
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  {% endblock %}
+
+{% endblock %}

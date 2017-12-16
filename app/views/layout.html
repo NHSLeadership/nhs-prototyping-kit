@@ -1,19 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Page title</title>
-</head>
-<body>
+{% extends "nhs_template.html" %}
 
-    <header>
-        <p><a href="/">Home</a></p>
-    </header>
-    
-    {% block body %}
-    {% endblock %}
+{% block header_class %}
+  c-page-header
+{% endblock %}
 
-    <footer>
-    </footer>
+{% block header_content %}
+  {% include "includes/header.html" ignore missing %}
+  {% block breadcrumbs %} {% endblock %}
+{% endblock %}
 
-</body>
-</html>
+{% block footer_support_links %}
+  {% include "includes/footer_support_links.html" ignore missing %}
+{% endblock %}
+
+{% block body_end %}
+  {% block scripts %}
+    {% include "includes/scripts.html" ignore missing %}
+  {% endblock %}
+{% endblock %}

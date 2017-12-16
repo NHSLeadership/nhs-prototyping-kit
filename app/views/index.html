@@ -1,10 +1,47 @@
-{% extends 'layout.html' %}
+{% extends "layout.html" %}
 
 {% block body %}
-
     {% block content %}
-        <h1>H1 Title</h1>
-        <p>Hello world!</p>
+
+    <div class="o-wrapper"> 
+
+      <main class="o-layout o-layout--wide">
+
+        <div class="o-layout__item u-8/12@lg">
+
+          <h1 class="u-margin-bottom-small">NHS prototyping kit</h1>
+
+          <p>This kit lets you rapidly create HTML prototypes of NHS Leadership
+          Academy's work</p>
+
+          <p>It contains all you need to prototype anything from simple static pages
+          to complex, visual documents.</p>
+
+          <h2 class="u-margin-bottom-small">About this page</h2>
+
+          <p>We recommend you add links to your prototype to this page, rather than
+          deleting it. You'll find this page in the kit at '/app/views/index.html'.</p>
+
+          <p>You can change various configurable elements by editing the
+          '/app/config.js'
+
+          <h2 class="u-margin-bottom-small">Examples</h2>
+            <ol>
+              <li><a href="/docs">Example pages and documentation</a></li>
+              <li><a href="https://github.com/NHSLeadership/nhs-prototyping-kit">GitHub</a></li>
+            </ol>
+
+          <h2 class="u-margin-bottom-small">Other resources</h2>
+            <ol>
+              <li><a href="https://github.com/NHSLeadership/nhs-prototyping-kit">Frontend Framework</a></li>
+            </ol>
+
+        </div>
+
+      </main><!-- /.o-layout__item -->
+
+    </div>
     {% endblock %}
+
 
 {% endblock %}

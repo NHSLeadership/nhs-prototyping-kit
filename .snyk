@@ -1,34 +1,50 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.1
-ignore: {}
+
+version: v1.10.1
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  'npm:shelljs:20140723':
+    - standard > eslint > shelljs:
+        reason: No patch available
+        expires: '2017-10-12T11:07:36.489Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
+  'npm:marked:20170112':
+    - marked:
+        patched: '2017-09-12T11:06:00.107Z'
   'npm:minimatch:20160620':
-    - gulp > vinyl-fs > glob-stream > minimatch:
-        patched: '2017-09-12T08:45:14.656Z'
-    - gulp-nodemon > gulp > vinyl-fs > glob-stream > minimatch:
-        patched: '2017-09-12T08:45:14.656Z'
-    - gulp > vinyl-fs > glob-stream > glob > minimatch:
-        patched: '2017-09-11T11:03:42.103Z'
-      gulp-nodemon > gulp > vinyl-fs > glob-stream > glob > minimatch:
-        patched: '2017-09-12T08:45:14.656Z'
     - gulp-nodemon > gulp > vinyl-fs > glob-stream > glob > minimatch:
-        patched: '2017-09-11T11:03:42.103Z'
-      gulp > vinyl-fs > glob-stream > glob > minimatch:
-        patched: '2017-09-12T08:45:14.656Z'
-    - gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
-        patched: '2017-09-11T11:03:42.103Z'
-      gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
-        patched: '2017-09-12T08:45:14.656Z'
-    - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
-        patched: '2017-09-11T11:03:42.103Z'
-      gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
-        patched: '2017-09-12T08:45:14.656Z'
+        patched: '2017-09-12T11:06:00.107Z'
+    - gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2017-09-12T11:06:00.107Z'
+    - gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2017-09-12T11:06:00.107Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2017-09-12T11:06:00.107Z'
     - gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
-        patched: '2017-09-11T11:03:42.103Z'
-      gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
-        patched: '2017-09-12T08:45:14.656Z'
+        patched: '2017-09-12T11:06:00.107Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2017-09-12T11:06:00.107Z'
     - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
-        patched: '2017-09-11T11:03:42.103Z'
-      gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
-        patched: '2017-09-12T08:45:14.656Z'
+        patched: '2017-09-12T11:06:00.107Z'
+    - gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2017-09-12T11:06:00.107Z'
+  'npm:debug:20170905':
+    - gulp-nodemon > nodemon > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
+        patched: '2017-12-16T23:12:03.199Z'
+    - gulp-watch > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
+        patched: '2017-12-16T23:12:03.199Z'
+    - chokidar > fsevents > node-pre-gyp > tar-pack > debug:
+        patched: '2017-12-16T23:12:03.199Z'
+    - nunjucks > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
+        patched: '2017-12-16T23:12:03.199Z'
+  'npm:tough-cookie:20170905':
+    - nunjucks > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2017-12-16T23:12:03.199Z'
+    - gulp-nodemon > nodemon > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2017-12-16T23:12:03.199Z'
+    - chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2017-12-16T23:12:03.199Z'
+    - gulp-watch > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2017-12-16T23:12:03.199Z'
+        

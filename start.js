@@ -1,29 +1,30 @@
-// start.js
-// ==========================================================================
-// In this file let's get the install checked and the app up and running.
+/**
+ * ========================================================================
+ * #START.JS
+ * In this file let's get the install checked and the app up and running.
+ */
 
-// Check we have installed modules
-// --------------------------------------------------------------------------
-// Check we have a `node_modules` folder otherwise prompt an install
-//
-
-// Firstly the requires
 var path = require('path')
 var fs = require('fs')
 
-// Check `node_modules` folder exists...
-const nodeModulesExists = fs.existsSync(path.join(__dirname, '/node_modules'))
-
-// ...and prompt an install if missing
+// Check we have a `node_modules` folder otherwise prompt an install
+const nodeModulesExists = fs.existsSync(path.join(__dirname, './node_modules'))
 if (!nodeModulesExists) {
   console.error('ERROR: Node module folder missing. Try running `npm install`')
   process.exit(0)
 }
 
+const envExists = fs.existsSync(path.join(__dirname, '/.env'))
+if (!envExists) {
+  console.log('Creating template .env file')
+    fs.createReadStream(path.join(__dirname, './lib/template.env'))
+    .pipe(fs.createWriteStream(path.join(__dirname, '/.env')))
+}
 
-// Gulp
-// ---------------------------------------------------------------------------
-//
+/**
+ * #GULP
+ * ========================================================================
+ */
 
 // Requires to sport node async scripts
 var spawn = require('cross-spawn')

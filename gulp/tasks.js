@@ -1,17 +1,20 @@
-// tasks.js
-// ============================================================================
-// Gulp task sequence: server and app watch
-//
-
-// requires gupl and gulp sequencer
 var gulp = require('gulp')
 var runSequence = require('run-sequence')
 
-// export to app gulp task responce
-module.exports = gulp.task('default', function (done) {
-    // run sequence
-    runSequence(
-                'server',
+gulp.task('default', function (done) {
+  runSequence('generate-assets',
                 'watch',
-                done)
+                'server', done)
+})
+
+gulp.task('generate-assets', function (done) {
+  runSequence('clean',
+                'sass-app',
+                'sass-documentation',
+                'copy-assets', done)
+})
+
+gulp.task('watch', function () {
+  runSequence('watch-sass',
+               'watch-assets')
 })
