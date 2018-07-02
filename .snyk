@@ -1,6 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-
-version: v1.10.1
+version: v1.12.0
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   'npm:shelljs:20140723':
@@ -47,4 +46,8 @@ patch:
         patched: '2017-12-16T23:12:03.199Z'
     - gulp-watch > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
         patched: '2017-12-16T23:12:03.199Z'
-        
+  'npm:tunnel-agent:20170305':
+    - gulp-sass > node-sass > request > tunnel-agent:
+        patched: '2018-07-02T00:31:32.863Z'
+    - nightingale > node-sass > request > tunnel-agent:
+        patched: '2018-07-02T00:31:32.863Z'
