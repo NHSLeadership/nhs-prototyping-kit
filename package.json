@@ -52,7 +52,7 @@
     "run-sequence": "^2.2.1",
     "snyk": "^1.65.1",
     "standard": "^10.0.3",
-    "yarn": "^1.3.2"
+    "yarn": "^1.22.0"
   },
   "snyk": true
 }
