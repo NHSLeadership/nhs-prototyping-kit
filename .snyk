@@ -1,6 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-
-version: v1.10.1
+version: v1.14.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   'npm:shelljs:20140723':
@@ -47,4 +46,36 @@ patch:
         patched: '2017-12-16T23:12:03.199Z'
     - gulp-watch > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
         patched: '2017-12-16T23:12:03.199Z'
-        
+  SNYK-JS-LODASH-567746:
+    - nightingale > stylelint > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - snyk > inquirer > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - snyk > snyk-resolve-deps > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - standard > eslint > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - gulp-sass > node-sass > sass-graph > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - nightingale > node-sass > sass-graph > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - nightingale > stylelint > doiuse > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - nightingale > stylelint > postcss-reporter > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - nightingale > stylelint > table > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - standard > eslint > inquirer > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - standard > eslint > table > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - gulp-sass > node-sass > gaze > globule > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - nightingale > node-sass > gaze > globule > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - nightingale > stylelint > colorguard > postcss-reporter > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
+    - nightingale > stylelint > stylehacks > postcss-reporter > lodash:
+        patched: '2020-05-04T21:24:46.269Z'
